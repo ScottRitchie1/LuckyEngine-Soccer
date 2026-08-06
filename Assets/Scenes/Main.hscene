@@ -160,11 +160,11 @@ SceneSettings:
     RegisteredTasks:
       []
   EditorCamera:
-    Position: [-5.89349, 4.09841, 7.59997]
-    FocalPoint: [-5.61668, -4.02868, -2.51407]
+    Position: [1.51323, 2.85501, 5.901]
+    FocalPoint: [1.5635, -0.708211, -6.57782]
     Distance: 12.9777
-    Pitch: 0.676716
-    Yaw: 0.0273621
+    Pitch: 0.278138
+    Yaw: 0.00403428
   RendererSettings:
     Shadows:
       CascadeNearPlaneOffset: 0
@@ -537,8 +537,8 @@ Entities:
       MaxAngularVelocity: 50
       LockedAxes: 0
     SphereColliderComponent:
-      Radius: 0.05
-      Offset: [0, 0, 0]
+      Radius: 0.08
+      Offset: [0, 0, 0.1]
       Friction: 0.5
       Restitution: 0.15
     MujocoGeomComponent:
@@ -716,7 +716,7 @@ Entities:
       EnableDynamicTypeChange: false
       Mass: 3
       LinearDrag: 0.1
-      AngularDrag: 0.2
+      AngularDrag: 5
       DisableGravity: false
       IsTrigger: false
       CollisionDetection: 0
@@ -1282,8 +1282,8 @@ Entities:
       MaxAngularVelocity: 50
       LockedAxes: 0
     SphereColliderComponent:
-      Radius: 0.05
-      Offset: [0, 0, 0]
+      Radius: 0.08
+      Offset: [0, 0, 0.1]
       Friction: 0.5
       Restitution: 0.15
     MujocoGeomComponent:
@@ -2103,8 +2103,8 @@ Entities:
       MaxAngularVelocity: 50
       LockedAxes: 0
     SphereColliderComponent:
-      Radius: 0.05
-      Offset: [0, 0, 0]
+      Radius: 0.08
+      Offset: [0, 0, 0.1]
       Friction: 0.5
       Restitution: 0.15
     MujocoGeomComponent:
@@ -2438,8 +2438,8 @@ Entities:
       MaxAngularVelocity: 50
       LockedAxes: 0
     SphereColliderComponent:
-      Radius: 0.05
-      Offset: [0, 0, 0]
+      Radius: 0.08
+      Offset: [0, 0, 0.1]
       Friction: 0.5
       Restitution: 0.15
     MujocoGeomComponent:
@@ -3345,7 +3345,7 @@ Entities:
         - ID: 3244213740
           Name: WalkSpeed
           Type: Float
-          Value: 1.2
+          Value: 0.8
         - ID: 2926452953
           Name: StandDistance
           Type: Float
@@ -3357,15 +3357,23 @@ Entities:
         - ID: 2147438436
           Name: YawGain
           Type: Float
-          Value: 2
+          Value: 4
         - ID: 3583011121
           Name: MaxYawRate
           Type: Float
-          Value: 1
+          Value: 2
         - ID: 3604940061
           Name: CurveAroundBall
           Type: Bool
           Value: true
+        - ID: 1771123757
+          Name: StuckTimeout
+          Type: Float
+          Value: 1.5
+        - ID: 3566202188
+          Name: StuckMoveThreshold
+          Type: Float
+          Value: 0.05
         - ID: 868368445
           Name: TurnToFaceFirst
           Type: Bool
@@ -3401,15 +3409,15 @@ Entities:
         - ID: 4034018402
           Name: WindupLift
           Type: Float
-          Value: 0.15
+          Value: 0.3
         - ID: 4067851637
           Name: PushReach
           Type: Float
-          Value: 0.6
+          Value: 0.7
         - ID: 1003295581
           Name: PushHeight
           Type: Float
-          Value: 0.15
+          Value: 0.3
         - ID: 887362834
           Name: HoldBeforePush
           Type: Float
@@ -4500,7 +4508,7 @@ Entities:
         - ID: 3244213740
           Name: WalkSpeed
           Type: Float
-          Value: 1.2
+          Value: 0.8
         - ID: 2926452953
           Name: StandDistance
           Type: Float
@@ -4512,15 +4520,23 @@ Entities:
         - ID: 2147438436
           Name: YawGain
           Type: Float
-          Value: 2
+          Value: 4
         - ID: 3583011121
           Name: MaxYawRate
           Type: Float
-          Value: 1
+          Value: 2
         - ID: 3604940061
           Name: CurveAroundBall
           Type: Bool
           Value: true
+        - ID: 1771123757
+          Name: StuckTimeout
+          Type: Float
+          Value: 1.5
+        - ID: 3566202188
+          Name: StuckMoveThreshold
+          Type: Float
+          Value: 0.05
         - ID: 868368445
           Name: TurnToFaceFirst
           Type: Bool
@@ -4556,15 +4572,15 @@ Entities:
         - ID: 4034018402
           Name: WindupLift
           Type: Float
-          Value: 0.15
+          Value: 0.3
         - ID: 4067851637
           Name: PushReach
           Type: Float
-          Value: 0.6
+          Value: 0.7
         - ID: 1003295581
           Name: PushHeight
           Type: Float
-          Value: 0.15
+          Value: 0.3
         - ID: 887362834
           Name: HoldBeforePush
           Type: Float
