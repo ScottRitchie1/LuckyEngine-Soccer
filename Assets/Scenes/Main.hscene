@@ -160,11 +160,11 @@ SceneSettings:
     RegisteredTasks:
       []
   EditorCamera:
-    Position: [4.7036, 1.16016, -1.53666]
-    FocalPoint: [13.1997, -0.451738, -1.06884]
+    Position: [-1.93423, 10.2596, 5.87935]
+    FocalPoint: [-1.91449, 3.11695, 0.982265]
     Distance: 8.66025
-    Pitch: 0.187217
-    Yaw: 1.6258
+    Pitch: 0.969792
+    Yaw: 0.00403234
   RendererSettings:
     Shadows:
       CascadeNearPlaneOffset: 0
@@ -656,9 +656,33 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [0.0194329, 0.719482, -0.46412]
+      Position: [0, 0.617648, 0]
       Rotation: [0, 0, 0]
       Scale: [1, 1, 1]
+    ScriptComponent:
+      ScriptID: 765017615
+      ScriptName: Soccer.Ball
+      Fields:
+        - ID: 1947257366
+          Name: RedScore
+          Type: Int
+          Value: 0
+        - ID: 671829979
+          Name: BlueScore
+          Type: Int
+          Value: 0
+        - ID: 828963748
+          Name: RedGoalDistance
+          Type: Float
+          Value: -7.5
+        - ID: 680505091
+          Name: BlueGoalDistance
+          Type: Float
+          Value: 7.5
+        - ID: 3206182046
+          Name: scoreText
+          Type: Entity
+          Value: 2596151479179322867
     StaticMeshComponent:
       AssetID: 14956574617453564460
       MaterialTable:
@@ -737,6 +761,28 @@ Entities:
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 22
+  - Entity: 2596151479179322867
+    Domain: Client
+    TagComponent:
+      Tag: Text
+    Parent: 0
+    Children:
+      []
+    TransformComponent:
+      Position: [-1.27568, 0.0462039, -3.42374]
+      Rotation: [-1.5708, 0, 0]
+      Scale: [1, 1, 1]
+    TextComponent:
+      TextString: "Blue: 0\nRed: 0"
+      FontHandle: 0
+      Color: [1, 1, 1, 1]
+      LineSpacing: 0
+      Kerning: 0
+      MaxWidth: 10
+      ScreenSpace: false
+      DropShadow: false
+      ShadowDistance: 0
+      ShadowColor: [0, 0, 0, 1]
   - Entity: 2651939714886020834
     Domain: Client
     TagComponent:
@@ -2025,6 +2071,33 @@ Entities:
       Position: [-2.38419e-06, 0.0431367, 0.118509]
       Rotation: [-1.5708, 0, 0]
       Scale: [1, 1, 1]
+  - Entity: 8104256272251118014
+    Domain: Client
+    TagComponent:
+      Tag: Blue Goal
+    Parent: 13297301893240040455
+    Children:
+      []
+    TransformComponent:
+      Position: [0.547398, 0.0183403, 0]
+      Rotation: [0, 0, 0]
+      Scale: [0.144867, 1, 0.469891]
+    StaticMeshComponent:
+      AssetID: 4241663774595030205
+      MaterialTable:
+        0: 2527365211622438541
+      Visible: true
+    BoxColliderComponent:
+      Offset: [0, 0, 0]
+      HalfSize: [0.5, 0.5, 0.5]
+      Friction: 0.5
+      Restitution: 0.15
+    MujocoBoxColliderComponent:
+      Density: 500
+      Friction: [1, 0.1, 0.01]
+      Contype: 1
+      Conaffinity: 1
+      Condim: -1
   - Entity: 8206151152595277143
     Domain: Client
     TagComponent:
@@ -2951,6 +3024,8 @@ Entities:
       - Handle: 10364182925272145868
       - Handle: 133568131999851086
       - Handle: 13389507655344841393
+      - Handle: 8104256272251118014
+      - Handle: 17950319899844429920
     TransformComponent:
       Position: [0, -0.1, 0]
       Rotation: [0, 0, 0]
@@ -4391,6 +4466,33 @@ Entities:
       Visible: true
     MujocoGeomComponent:
       ID: 1
+  - Entity: 17950319899844429920
+    Domain: Client
+    TagComponent:
+      Tag: Red Goal
+    Parent: 13297301893240040455
+    Children:
+      []
+    TransformComponent:
+      Position: [-0.55, 0.0183403, 0]
+      Rotation: [0, 0, 0]
+      Scale: [0.144867, 1, 0.469891]
+    StaticMeshComponent:
+      AssetID: 4241663774595030205
+      MaterialTable:
+        0: 9486334613531098193
+      Visible: true
+    BoxColliderComponent:
+      Offset: [0, 0, 0]
+      HalfSize: [0.5, 0.5, 0.5]
+      Friction: 0.5
+      Restitution: 0.15
+    MujocoBoxColliderComponent:
+      Density: 500
+      Friction: [1, 0.1, 0.01]
+      Contype: 1
+      Conaffinity: 1
+      Condim: -1
   - Entity: 18088247337508769004
     Domain: Client
     TagComponent:

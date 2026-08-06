@@ -233,6 +233,9 @@ Assets:
   - Handle: 10577696176570291058
     FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/right_ankle_roll_link.STL
     Type: MeshSource
+  - Handle: 10595872791836932641
+    FilePath: Scripts/Client/Source/Ball.cs
+    Type: ScriptFile
   - Handle: 10759091747979573297
     FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/Policies/policy_descriptor.rotator.json
     Type: Motion
