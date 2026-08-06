@@ -102,17 +102,17 @@ SceneSettings:
     Frequency: 50
     Priority: 0
     Phase: 2
-    Substeps: 10
+    Substeps: 20
     Mode: Performance_Substeps
     DefaultBackend: 1
-    ShowBakeDebugHUD: false
-    ShowPrefetchStatus: false
-    ConcurrentBaking: false
-    VHACDInternalThreading: true
-    VHACDMaxVerticesPerHull: 128
+    ShowBakeDebugHUD: true
+    ShowPrefetchStatus: true
+    ConcurrentBaking: true
+    VHACDInternalThreading: false
+    VHACDMaxVerticesPerHull: 256
     VolumeErrorPct: 1
     MaxRecursionDepth: 10
-    MaxVoxelResolution: 400000
+    MaxVoxelResolution: 16000000
     MaxThreshold: 0.05
   UpdateDataRecorderSettings:
     Enabled: true
@@ -150,7 +150,7 @@ SceneSettings:
     DataWriteMode: Parquet
     VideoCodec: H264
     VideoMethod: FFmpegGeneric
-    EnableRecordVideo: true
+    EnableRecordVideo: false
     EnableRecordData: true
     EnableRecordMasks: false
     EnableMaskJitter: true
@@ -160,11 +160,11 @@ SceneSettings:
     RegisteredTasks:
       []
   EditorCamera:
-    Position: [-0.950611, 4.60914, 7.34548]
-    FocalPoint: [0.651651, 0.646832, -0.186636]
+    Position: [0.287983, 4.37123, 8.7426]
+    FocalPoint: [0.606987, 0.983482, 0.778848]
     Distance: 8.66025
-    Pitch: 0.475574
-    Yaw: 0.20924
+    Pitch: 0.401917
+    Yaw: 0.0405252
   RendererSettings:
     Shadows:
       CascadeNearPlaneOffset: 0
@@ -191,8 +191,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.0314331, 0.574065, -0.256812]
-      Rotation: [2.93928, 1.30283, 1.42858]
+      Position: [-0.0314331, 0.580545, -0.256813]
+      Rotation: [2.93929, 1.30282, 1.42858]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -211,8 +211,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [0.0122886, 0.22795, 0.121331]
-      Rotation: [1.20037, 1.40652, 2.74908]
+      Position: [0.0122886, 0.234429, 0.121329]
+      Rotation: [1.20034, 1.40652, 2.74906]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -231,8 +231,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.0195661, 0.743186, 0.216668]
-      Rotation: [1.26172, 0.756916, -0.143748]
+      Position: [-0.0195661, 0.749665, 0.216667]
+      Rotation: [1.26173, 0.756917, -0.143745]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -251,7 +251,7 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.0102663, 1.04473, 0.155314]
+      Position: [-0.0102663, 1.05473, 0.155314]
       Rotation: [-2.94084, 1.29144, -1.57355]
       Scale: [1, 1, 1]
     StaticMeshComponent:
@@ -271,8 +271,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.00410843, 0.0421204, -0.118563]
-      Rotation: [-2.53832, 1.5708, -1.55157]
+      Position: [-0.00410843, 0.0485999, -0.118565]
+      Rotation: [0.699893, 1.5708, 1.66427]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -289,7 +289,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0345306, 0.602925, 0.250325]
+      Position: [-0.0345306, 0.612925, 0.250325]
       Rotation: [-1.57399, -0.2022, -1.47751]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -304,8 +304,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.00410891, 0.0421216, 0.118568]
-      Rotation: [-2.58182, 1.5708, -1.59053]
+      Position: [-0.00410891, 0.0486004, 0.118565]
+      Rotation: [1.61764, 1.5708, 2.65847]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -322,7 +322,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [0.0222244, 0.608198, 0.250147]
+      Position: [0.0222244, 0.618198, 0.250147]
       Rotation: [-1.57399, -0.2022, -1.47751]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -335,8 +335,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0211568, 0.76577, -0.212563]
-      Rotation: [-1.56761, 0.202193, -1.47751]
+      Position: [-0.0211568, 0.77225, -0.212563]
+      Rotation: [-1.56761, 0.202197, -1.47751]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 22
@@ -350,8 +350,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.000944614, 1.06146, -0.00111365]
-      Rotation: [1.50123, 0.000162601, 1.56693]
+      Position: [-0.000944614, 1.06794, -0.00111258]
+      Rotation: [1.50123, 0.000159085, 1.56692]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -368,8 +368,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0232844, 0.981306, -0.166546]
-      Rotation: [-1.376, 0.05461, -0.192496]
+      Position: [-0.0232844, 0.991306, -0.166546]
+      Rotation: [-1.37599, 0.0546102, -0.192496]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 19
@@ -381,7 +381,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [0, 0.79, 0]
+      Position: [0, 0.8, 0]
       Rotation: [-1.5708, 0, 0]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -394,7 +394,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-2.38419e-06, 0.0331367, 0.118509]
+      Position: [-2.38419e-06, 0.0396154, 0.118506]
       Rotation: [-1.5708, 0, 0]
       Scale: [1, 1, 1]
   - Entity: 645401183181513029
@@ -405,7 +405,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-2.38419e-06, 0.0331358, -0.118504]
+      Position: [-2.38419e-06, 0.0431359, -0.118504]
       Rotation: [-1.5708, 0, 0]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -420,8 +420,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.00179386, 1.08292, 0.13582]
-      Rotation: [-3.12561, 0.70719, -1.7903]
+      Position: [-0.00179386, 1.08939, 0.135821]
+      Rotation: [-3.12561, 0.707194, -1.7903]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -440,7 +440,7 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.0195661, 0.743185, -0.216677]
+      Position: [-0.0195661, 0.753185, -0.216677]
       Rotation: [1.87346, -0.735009, -0.134307]
       Scale: [1, 1, 1]
     StaticMeshComponent:
@@ -458,8 +458,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0169592, 0.720904, 0.221792]
-      Rotation: [-1.57399, -0.2022, -1.47751]
+      Position: [-0.0169592, 0.727383, 0.221791]
+      Rotation: [-1.57399, -0.202196, -1.47751]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 37
@@ -471,7 +471,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [0, 0.79, 0]
+      Position: [0, 0.796479, 5.96046e-08]
       Rotation: [-1.5708, 0, 0]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -486,14 +486,34 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.00939226, 0.639957, 0.242599]
-      Rotation: [-0.00929618, 1.3126, -1.48884]
+      Position: [-0.00939226, 0.649957, 0.242599]
+      Rotation: [-0.00929554, 1.3126, -1.48884]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
       MaterialTable:
         0: 0
       Visible: true
+    RigidBodyComponent:
+      BodyType: 2
+      LayerID: 0
+      EnableDynamicTypeChange: false
+      Mass: 1
+      LinearDrag: 0.01
+      AngularDrag: 0.05
+      DisableGravity: false
+      IsTrigger: false
+      CollisionDetection: 0
+      InitialLinearVelocity: [0, 0, 0]
+      InitialAngularVelocity: [0, 0, 0]
+      MaxLinearVelocity: 500
+      MaxAngularVelocity: 50
+      LockedAxes: 0
+    SphereColliderComponent:
+      Radius: 0.05
+      Offset: [0, 0, 0]
+      Friction: 0.5
+      Restitution: 0.15
     MujocoGeomComponent:
       ID: 84
   - Entity: 1530807490983377169
@@ -504,8 +524,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-7.15256e-06, 1.08178, 0.100209]
-      Rotation: [-1.84486, -0.0546114, -0.192496]
+      Position: [-7.15256e-06, 1.08826, 0.10021]
+      Rotation: [-1.84485, -0.0546107, -0.192496]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 31
@@ -517,8 +537,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0108914, 0.656155, 0.238186]
-      Rotation: [-1.57399, -0.2022, -1.47751]
+      Position: [-0.0108914, 0.662634, 0.238185]
+      Rotation: [-1.57399, -0.202196, -1.47751]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 38
@@ -532,8 +552,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.0248785, 0.9326, -0.172187]
-      Rotation: [0.933228, 1.4055, 2.56388]
+      Position: [-0.0248785, 0.9426, -0.172187]
+      Rotation: [0.933226, 1.4055, 2.56388]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -552,8 +572,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.0275078, 0.849593, 0.202152]
-      Rotation: [-2.59384, 1.42542, 2.10091]
+      Position: [-0.0275078, 0.856072, 0.202153]
+      Rotation: [-2.59385, 1.42542, 2.10089]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -570,7 +590,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0169592, 0.720903, -0.221801]
+      Position: [-0.0169592, 0.730903, -0.221801]
       Rotation: [-1.56761, 0.202193, -1.47751]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -583,8 +603,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0345306, 0.602923, -0.250334]
-      Rotation: [-1.56761, 0.202193, -1.47751]
+      Position: [-0.0345306, 0.609403, -0.250335]
+      Rotation: [-1.56761, 0.202197, -1.47751]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 27
@@ -596,11 +616,47 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [0, 0.656835, 0.116453]
-      Rotation: [-1.5708, 7.15256e-07, 0.1749]
+      Position: [0, 0.663314, 0.116452]
+      Rotation: [-1.5708, -5.96046e-08, 0.1749]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 9
+  - Entity: 2276781885538871374
+    Domain: Client
+    TagComponent:
+      Tag: Ball
+    Parent: 0
+    Children:
+      []
+    TransformComponent:
+      Position: [0.0331312, 0.731554, -0.433137]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+    StaticMeshComponent:
+      AssetID: 14956574617453564460
+      MaterialTable:
+        0: 0
+      Visible: true
+    RigidBodyComponent:
+      BodyType: 1
+      LayerID: 0
+      EnableDynamicTypeChange: false
+      Mass: 1
+      LinearDrag: 0.01
+      AngularDrag: 0.05
+      DisableGravity: false
+      IsTrigger: false
+      CollisionDetection: 0
+      InitialLinearVelocity: [0, 0, 0]
+      InitialAngularVelocity: [0, 0, 0]
+      MaxLinearVelocity: 500
+      MaxAngularVelocity: 50
+      LockedAxes: 0
+    SphereColliderComponent:
+      Radius: 0.5
+      Offset: [0, 0, 0]
+      Friction: 0.5
+      Restitution: 0.15
   - Entity: 2346327223493177040
     Domain: Client
     TagComponent:
@@ -611,8 +667,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.0275087, 0.849592, -0.202164]
-      Rotation: [0.547086, 1.42544, -1.04135]
+      Position: [-0.0275087, 0.856072, -0.202164]
+      Rotation: [0.547102, 1.42544, -1.04133]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -631,7 +687,7 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.0102663, 1.04473, 0.155314]
+      Position: [-0.0102663, 1.05121, 0.155315]
       Rotation: [-2.94084, 1.29144, -1.57355]
       Scale: [1, 1, 1]
     StaticMeshComponent:
@@ -649,7 +705,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0211568, 0.76577, -0.212563]
+      Position: [-0.0211568, 0.77577, -0.212563]
       Rotation: [-1.56761, 0.202193, -1.47751]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -664,8 +720,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [0.000687122, 0.711406, -2.37226e-05]
-      Rotation: [-1.92879, 1.56907, -1.90518]
+      Position: [0.000687122, 0.717885, -2.39015e-05]
+      Rotation: [-1.92963, 1.56907, -1.90603]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -684,7 +740,7 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.0102663, 1.04473, -0.155326]
+      Position: [-0.0102663, 1.05473, -0.155326]
       Rotation: [0.200413, 1.29146, 1.56767]
       Scale: [1, 1, 1]
     StaticMeshComponent:
@@ -704,8 +760,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [0.0253224, 0.579338, -0.256634]
-      Rotation: [2.93928, 1.30283, 1.42858]
+      Position: [0.0253224, 0.585819, -0.256635]
+      Rotation: [2.93929, 1.30282, 1.42858]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -722,8 +778,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0169592, 0.720903, -0.221801]
-      Rotation: [-1.56761, 0.202193, -1.47751]
+      Position: [-0.0169592, 0.727383, -0.221801]
+      Rotation: [-1.56761, 0.202197, -1.47751]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 23
@@ -737,7 +793,7 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.0150847, 0.700952, 0.226821]
+      Position: [-0.0150847, 0.710952, 0.226821]
       Rotation: [-1.61475, 1.26613, -1.48216]
       Scale: [1, 1, 1]
     StaticMeshComponent:
@@ -757,8 +813,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [0.0245366, 0.579267, 0.256628]
-      Rotation: [0.179218, 1.30421, -1.26555]
+      Position: [0.0245366, 0.585745, 0.256627]
+      Rotation: [0.179222, 1.30421, -1.26555]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -775,8 +831,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [0.00486088, 0.595032, 0.247868]
-      Rotation: [-1.3686, -0.00312638, -3.04895]
+      Position: [0.00486088, 0.60151, 0.247867]
+      Rotation: [-1.3686, -0.0031261, -3.04895]
       Scale: [1, 1, 1]
   - Entity: 2937866508648825110
     Domain: Client
@@ -786,8 +842,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.00274754, 1.07923, -0.140486]
-      Rotation: [-1.376, 0.05461, -0.192496]
+      Position: [-0.00274754, 1.08923, -0.140486]
+      Rotation: [-1.37599, 0.0546102, -0.192496]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 18
@@ -799,8 +855,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0303512, 0.558251, -0.259531]
-      Rotation: [-1.56761, 0.202193, -1.47751]
+      Position: [-0.0303512, 0.564732, -0.259532]
+      Rotation: [-1.56761, 0.202197, -1.47751]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 28
@@ -812,7 +868,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-2.38419e-06, 0.0506947, 0.118509]
+      Position: [-2.38419e-06, 0.0571734, 0.118506]
       Rotation: [-1.5708, 0, 0]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -825,7 +881,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0237632, 0.900918, -0.18297]
+      Position: [-0.0237632, 0.910918, -0.18297]
       Rotation: [-1.56761, 0.202193, -1.47751]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -838,7 +894,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-2.38419e-06, 0.350705, 0.118602]
+      Position: [-2.38419e-06, 0.357183, 0.118601]
       Rotation: [-1.5708, 0, 0]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -851,7 +907,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-2.38419e-06, 0.350704, -0.118599]
+      Position: [-2.38419e-06, 0.357183, -0.118601]
       Rotation: [-1.5708, 0, 0]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -864,8 +920,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [0, 0.656835, -0.116452]
-      Rotation: [-1.5708, 7.15256e-07, 0.1749]
+      Position: [0, 0.666835, -0.116452]
+      Rotation: [-1.5708, 5.96046e-07, 0.1749]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 3
@@ -877,7 +933,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0232844, 0.981307, 0.166534]
+      Position: [-0.0232844, 0.991307, 0.166534]
       Rotation: [-1.7656, -0.0546114, -0.192496]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -892,8 +948,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.0107236, 0.653888, 0.224645]
-      Rotation: [-0.296535, 0.00312638, 0.0926459]
+      Position: [-0.0107236, 0.660366, 0.224645]
+      Rotation: [-0.296532, 0.00312609, 0.092646]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -912,8 +968,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.00410891, 0.0421217, 0.118568]
-      Rotation: [-2.50182, 1.5708, -1.51461]
+      Position: [-0.00410891, 0.0521216, 0.118568]
+      Rotation: [-2.58182, 1.5708, -1.59053]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -930,7 +986,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0435534, 0.98192, 0.00223935]
+      Position: [-0.0435534, 0.988399, 0.00224012]
       Rotation: [-1.5708, 0, 0]
       Scale: [1, 1, 1]
   - Entity: 3794429779122623833
@@ -959,8 +1015,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0150533, 0.59318, -0.247939]
-      Rotation: [-1.77299, 0.00312591, -3.04895]
+      Position: [-0.0150533, 0.60318, -0.247939]
+      Rotation: [-1.77299, 0.00312581, -3.04895]
       Scale: [1, 1, 1]
   - Entity: 4207707287734571270
     Domain: Client
@@ -972,14 +1028,34 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.00935316, 0.639959, -0.242608]
-      Rotation: [3.1264, 1.3126, 1.65046]
+      Position: [-0.00935316, 0.646439, -0.242608]
+      Rotation: [3.1264, 1.31259, 1.65046]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
       MaterialTable:
         0: 0
       Visible: true
+    RigidBodyComponent:
+      BodyType: 2
+      LayerID: 0
+      EnableDynamicTypeChange: false
+      Mass: 1
+      LinearDrag: 0.01
+      AngularDrag: 0.05
+      DisableGravity: false
+      IsTrigger: false
+      CollisionDetection: 0
+      InitialLinearVelocity: [0, 0, 0]
+      InitialAngularVelocity: [0, 0, 0]
+      MaxLinearVelocity: 500
+      MaxAngularVelocity: 50
+      LockedAxes: 0
+    SphereColliderComponent:
+      Radius: 0.05
+      Offset: [0, 0, 0]
+      Friction: 0.5
+      Restitution: 0.15
     MujocoGeomComponent:
       ID: 54
   - Entity: 4334403846186966773
@@ -990,7 +1066,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0108914, 0.656155, 0.238186]
+      Position: [-0.0108914, 0.666155, 0.238186]
       Rotation: [-1.57399, -0.2022, -1.47751]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -1005,8 +1081,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.0195661, 0.743185, -0.216677]
-      Rotation: [1.87346, -0.735009, -0.134307]
+      Position: [-0.0195661, 0.749665, -0.216677]
+      Rotation: [1.87346, -0.735008, -0.134311]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -1023,8 +1099,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0237632, 0.900919, 0.182959]
-      Rotation: [-1.57399, -0.2022, -1.47751]
+      Position: [-0.0237632, 0.907398, 0.18296]
+      Rotation: [-1.57399, -0.202196, -1.47751]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 34
@@ -1038,8 +1114,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [0.00382185, 0.805615, 3.06368e-05]
-      Rotation: [1.56968, 0.00041914, 1.69065]
+      Position: [0.00382185, 0.815615, 3.06368e-05]
+      Rotation: [1.56968, 0.000418961, 1.69065]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -1058,8 +1134,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.0248785, 0.9326, -0.172187]
-      Rotation: [0.933226, 1.4055, 2.56388]
+      Position: [-0.0248785, 0.93908, -0.172186]
+      Rotation: [0.933208, 1.4055, 2.56386]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -1078,8 +1154,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.00179386, 1.08292, 0.13582]
-      Rotation: [-3.12561, 0.707191, -1.7903]
+      Position: [-0.00179386, 1.09292, 0.13582]
+      Rotation: [-3.12561, 0.70719, -1.7903]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -1096,7 +1172,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-2.38419e-06, 0.0506947, 0.118509]
+      Position: [-2.38419e-06, 0.0606946, 0.118509]
       Rotation: [-1.5708, 0, 0]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -1109,8 +1185,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0108914, 0.656154, -0.238195]
-      Rotation: [-1.56761, 0.202193, -1.47751]
+      Position: [-0.0108914, 0.662634, -0.238195]
+      Rotation: [-1.56761, 0.202197, -1.47751]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 24
@@ -1122,7 +1198,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [0, 0.79, 0]
+      Position: [0, 0.8, 0]
       Rotation: [-1.5708, 0, 0]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -1135,7 +1211,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.00684071, 0.611416, 0.204431]
+      Position: [-0.00684071, 0.621416, 0.204431]
       Rotation: [-1.58078, -1.25219, -1.46867]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -1148,8 +1224,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0150533, 0.59318, -0.247939]
-      Rotation: [-1.77299, 0.00312591, -3.04895]
+      Position: [-0.0150533, 0.59966, -0.247939]
+      Rotation: [-1.77299, 0.00312616, -3.04895]
       Scale: [1, 1, 1]
   - Entity: 5161235525372683563
     Domain: Client
@@ -1161,8 +1237,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [0.0321064, 0.442391, 0.113295]
-      Rotation: [-0.856219, 1.50737, 0.424734]
+      Position: [0.0321064, 0.452391, 0.113294]
+      Rotation: [-0.856218, 1.50737, 0.424735]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -1179,8 +1255,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0108199, 0.654729, 0.218777]
-      Rotation: [-1.58078, -1.25219, -1.46867]
+      Position: [-0.0108199, 0.661207, 0.218776]
+      Rotation: [-1.58078, -1.25218, -1.46867]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 39
@@ -1194,8 +1270,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [0.0122881, 0.227952, -0.121328]
-      Rotation: [-1.94162, 1.40661, -0.392915]
+      Position: [0.0122881, 0.234431, -0.12133]
+      Rotation: [-1.9416, 1.40662, -0.392895]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -1212,7 +1288,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0108914, 0.656154, -0.238195]
+      Position: [-0.0108914, 0.666154, -0.238195]
       Rotation: [-1.56761, 0.202193, -1.47751]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -1225,8 +1301,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0303512, 0.558253, 0.259523]
-      Rotation: [-1.57399, -0.2022, -1.47751]
+      Position: [-0.0303512, 0.564731, 0.259522]
+      Rotation: [-1.57399, -0.202196, -1.47751]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 42
@@ -1238,7 +1314,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-2.38419e-06, 0.0331367, 0.118509]
+      Position: [-2.38419e-06, 0.0431367, 0.118509]
       Rotation: [-1.5708, 0, 0]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -1251,8 +1327,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-7.15256e-06, 1.08178, -0.100221]
-      Rotation: [-1.29674, 0.0546103, -0.192496]
+      Position: [-7.15256e-06, 1.09178, -0.100221]
+      Rotation: [-1.29674, 0.0546102, -0.192496]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 17
@@ -1264,7 +1340,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [0, 0.79, 0]
+      Position: [0, 0.796479, 5.96046e-08]
       Rotation: [-1.5708, 0, 0]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -1279,8 +1355,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.00864649, 0.626737, -0.208981]
-      Rotation: [0.129816, 1.18867, -1.31246]
+      Position: [-0.00864649, 0.633217, -0.208982]
+      Rotation: [0.129818, 1.18868, -1.31246]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -1299,8 +1375,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.022922, 0.784637, -0.208685]
-      Rotation: [0.169654, -0.00313997, 0.092454]
+      Position: [-0.022922, 0.791116, -0.208685]
+      Rotation: [0.169658, -0.00314043, 0.0924539]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -1317,7 +1393,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-2.38419e-06, 0.0506939, -0.118504]
+      Position: [-2.38419e-06, 0.0571735, -0.118507]
       Rotation: [-1.5708, 0, 0]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -1330,7 +1406,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0169592, 0.720904, 0.221792]
+      Position: [-0.0169592, 0.730904, 0.221792]
       Rotation: [-1.57399, -0.2022, -1.47751]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -1345,8 +1421,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.00786066, 0.626811, 0.20897]
-      Rotation: [0.11324, -1.18966, -1.62846]
+      Position: [-0.00786066, 0.63329, 0.208969]
+      Rotation: [0.113239, -1.18966, -1.62846]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -1365,8 +1441,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [0.0321078, 0.442391, -0.113293]
-      Rotation: [2.28669, 1.50744, -2.71554]
+      Position: [0.0321078, 0.448871, -0.113295]
+      Rotation: [2.28664, 1.50744, -2.7156]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -1383,7 +1459,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.00396347, 0.834, -1.78814e-07]
+      Position: [-0.00396347, 0.840479, 5.96046e-08]
       Rotation: [-1.5708, 0, 0]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -1396,7 +1472,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-2.38419e-06, 0.0331358, -0.118504]
+      Position: [-2.38419e-06, 0.0431359, -0.118504]
       Rotation: [-1.5708, 0, 0]
       Scale: [1, 1, 1]
   - Entity: 6302807508762098628
@@ -1409,7 +1485,7 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.0282111, 0.532976, -0.264941]
+      Position: [-0.0282111, 0.539456, -0.264942]
       Rotation: [3.0897, 1.36734, 1.64851]
       Scale: [1, 1, 1]
     StaticMeshComponent:
@@ -1427,7 +1503,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [0.0222244, 0.608197, -0.250156]
+      Position: [0.0222244, 0.618197, -0.250156]
       Rotation: [-1.56761, 0.202193, -1.47751]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -1442,8 +1518,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [0.0289907, 0.538293, 0.264753]
-      Rotation: [0.020946, 1.36733, -1.49353]
+      Position: [0.0289907, 0.544771, 0.264752]
+      Rotation: [0.0209483, 1.36734, -1.49353]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -1462,7 +1538,7 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [0.0321078, 0.442391, -0.113293]
+      Position: [0.0321078, 0.452391, -0.113293]
       Rotation: [2.28669, 1.50744, -2.71554]
       Scale: [1, 1, 1]
     StaticMeshComponent:
@@ -1480,8 +1556,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-7.15256e-06, 1.08178, 0.100209]
-      Rotation: [-1.84486, -0.0546117, -0.192496]
+      Position: [-7.15256e-06, 1.09178, 0.100209]
+      Rotation: [-1.84486, -0.0546115, -0.192496]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 31
@@ -1493,8 +1569,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [0.0462174, 0.538959, -0.116451]
-      Rotation: [-1.5708, 7.15256e-07, 0.1749]
+      Position: [0.0462174, 0.548959, -0.116451]
+      Rotation: [-1.5708, 5.96046e-07, 0.1749]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 4
@@ -1508,8 +1584,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.0150867, 0.700949, -0.226831]
-      Rotation: [1.52709, 1.26607, 1.65943]
+      Position: [-0.0150867, 0.707429, -0.226831]
+      Rotation: [1.52709, 1.26606, 1.65943]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -1526,7 +1602,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0108199, 0.654728, -0.218786]
+      Position: [-0.0108199, 0.661208, -0.218786]
       Rotation: [-1.56082, 1.25218, -1.46867]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -1541,8 +1617,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.000866413, 0.661004, 0.111562]
-      Rotation: [-2.2209, -0.0946033, 0.127053]
+      Position: [-0.000866413, 0.667482, 0.111562]
+      Rotation: [-2.2209, -0.0946037, 0.127052]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -1559,7 +1635,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0303512, 0.558253, 0.259523]
+      Position: [-0.0303512, 0.568253, 0.259523]
       Rotation: [-1.57399, -0.2022, -1.47751]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -1572,8 +1648,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [0, 0.656835, -0.116452]
-      Rotation: [-1.5708, 7.15256e-07, 0.1749]
+      Position: [0, 0.663314, -0.116452]
+      Rotation: [-1.5708, -5.96046e-08, 0.1749]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 3
@@ -1587,8 +1663,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.0248785, 0.932601, 0.172175]
-      Rotation: [-2.20911, 1.40556, -0.578405]
+      Position: [-0.0248785, 0.939079, 0.172176]
+      Rotation: [-2.20909, 1.40557, -0.578385]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -1605,7 +1681,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0246243, 0.802834, -0.204932]
+      Position: [-0.0246243, 0.812834, -0.204932]
       Rotation: [-1.56761, 0.202193, -1.47751]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -1620,8 +1696,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.00396347, 0.834, -2.98023e-07]
-      Rotation: [-1.52663, 1.57045, -1.52663]
+      Position: [-0.00396347, 0.840479, -5.96046e-08]
+      Rotation: [0.846957, 1.57045, 0.846957]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -1638,7 +1714,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [0.0264039, 0.563527, 0.259345]
+      Position: [0.0264039, 0.573526, 0.259345]
       Rotation: [-1.57399, -0.2022, -1.47751]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -1651,8 +1727,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [0.0264039, 0.563526, 0.259345]
-      Rotation: [-1.57399, -0.2022, -1.47751]
+      Position: [0.0264039, 0.570005, 0.259344]
+      Rotation: [-1.57399, -0.202196, -1.47751]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 44
@@ -1664,7 +1740,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.00684071, 0.611415, -0.20444]
+      Position: [-0.00684071, 0.621415, -0.20444]
       Rotation: [-1.56082, 1.25218, -1.46867]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -1677,7 +1753,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.00684071, 0.611415, -0.20444]
+      Position: [-0.00684071, 0.617895, -0.20444]
       Rotation: [-1.56082, 1.25218, -1.46867]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -1692,7 +1768,7 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.00935316, 0.639959, -0.242608]
+      Position: [-0.00935316, 0.649959, -0.242608]
       Rotation: [3.1264, 1.3126, 1.65046]
       Scale: [1, 1, 1]
     StaticMeshComponent:
@@ -1700,6 +1776,26 @@ Entities:
       MaterialTable:
         0: 0
       Visible: true
+    RigidBodyComponent:
+      BodyType: 2
+      LayerID: 0
+      EnableDynamicTypeChange: false
+      Mass: 1
+      LinearDrag: 0.01
+      AngularDrag: 0.05
+      DisableGravity: false
+      IsTrigger: false
+      CollisionDetection: 0
+      InitialLinearVelocity: [0, 0, 0]
+      InitialAngularVelocity: [0, 0, 0]
+      MaxLinearVelocity: 500
+      MaxAngularVelocity: 50
+      LockedAxes: 0
+    SphereColliderComponent:
+      Radius: 0.05
+      Offset: [0, 0, 0]
+      Friction: 0.5
+      Restitution: 0.15
     MujocoGeomComponent:
       ID: 54
   - Entity: 7893918470830781149
@@ -1710,7 +1806,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-2.38419e-06, 0.0331367, 0.118509]
+      Position: [-2.38419e-06, 0.0431367, 0.118509]
       Rotation: [-1.5708, 0, 0]
       Scale: [1, 1, 1]
   - Entity: 8206151152595277143
@@ -1721,8 +1817,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.00274754, 1.07923, -0.140486]
-      Rotation: [-1.37599, 0.0546103, -0.192496]
+      Position: [-0.00274754, 1.08571, -0.140485]
+      Rotation: [-1.37599, 0.0546109, -0.192496]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 18
@@ -1736,8 +1832,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.00481749, 0.586933, 0.196114]
-      Rotation: [0.0265594, -1.25095, -1.46857]
+      Position: [-0.00481749, 0.596933, 0.196114]
+      Rotation: [0.0265595, -1.25095, -1.46857]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -1756,8 +1852,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [0.0469127, 0.596362, -0.116088]
-      Rotation: [-1.57592, -0.0148365, -0.178189]
+      Position: [0.0469127, 0.602841, -0.116088]
+      Rotation: [-1.57592, -0.0148359, -0.178188]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -1774,7 +1870,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [0, 0.6873, 0.0644524]
+      Position: [0, 0.693779, 0.0644521]
       Rotation: [-1.5708, 0, 0]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -1789,8 +1885,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.00437117, 0.586973, -0.196121]
-      Rotation: [0.0464435, 1.25094, -1.46886]
+      Position: [-0.00437117, 0.593453, -0.196122]
+      Rotation: [0.046445, 1.25094, -1.46886]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -1807,7 +1903,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.00396347, 0.834, -1.78814e-07]
+      Position: [-0.00396347, 0.844, -1.19209e-07]
       Rotation: [-1.5708, 0, 0]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -1820,8 +1916,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0345306, 0.602925, 0.250325]
-      Rotation: [-1.57399, -0.2022, -1.47751]
+      Position: [-0.0345306, 0.609403, 0.250325]
+      Rotation: [-1.57399, -0.202196, -1.47751]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 41
@@ -1833,7 +1929,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [0.0452499, 0.70661, 3.57628e-07]
+      Position: [0.0452499, 0.71661, 3.57628e-07]
       Rotation: [-1.5708, 0, 0]
       Scale: [1, 1, 1]
   - Entity: 8767391481468105290
@@ -1846,8 +1942,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.0322185, 0.573994, 0.256806]
-      Rotation: [0.179218, 1.30421, -1.26555]
+      Position: [-0.0322185, 0.583994, 0.256806]
+      Rotation: [0.179217, 1.30421, -1.26555]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -1864,8 +1960,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [0.0462174, 0.538959, 0.116453]
-      Rotation: [-1.5708, 7.15256e-07, 0.1749]
+      Position: [0.0462174, 0.545438, 0.116452]
+      Rotation: [-1.5708, -5.96046e-08, 0.1749]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 10
@@ -1879,7 +1975,7 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.00786066, 0.626811, 0.20897]
+      Position: [-0.00786066, 0.636811, 0.20897]
       Rotation: [0.113239, -1.18966, -1.62846]
       Scale: [1, 1, 1]
     StaticMeshComponent:
@@ -1897,45 +1993,11 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-2.38419e-06, 0.0506938, -0.118504]
+      Position: [-2.38419e-06, 0.0606939, -0.118504]
       Rotation: [-1.5708, 0, 0]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 6
-  - Entity: 9070304970153756617
-    Domain: Client
-    TagComponent:
-      Tag: Ball
-    Parent: 0
-    Children:
-      []
-    TransformComponent:
-      Position: [0, 1, 0]
-      Rotation: [0, 0, 0]
-      Scale: [1, 1, 1]
-    StaticMeshComponent:
-      AssetID: 14956574617453564460
-      MaterialTable:
-        0: 0
-      Visible: true
-    MujocoSphereColliderComponent:
-      Density: 1
-      Radius: 0.5
-      Friction: [1, 0.1, 0.01]
-      Contype: 1
-      Conaffinity: 1
-      Condim: -1
-    MujocoJointComponent:
-      Type: "\x00"
-      Position: [0, 0, 0]
-      Axis: [0, 1, 0]
-      Limited: false
-      LimitMin: -3.14159
-      LimitMax: 3.14159
-      Stiffness: 0
-      Damping: 1
-      Armature: 0.1
-      JointId: -1
   - Entity: 9153740723464039865
     Domain: Client
     TagComponent:
@@ -1946,8 +2008,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.0107236, 0.653886, -0.224654]
-      Rotation: [0.296529, -0.00312591, 0.0926461]
+      Position: [-0.0107236, 0.663886, -0.224654]
+      Rotation: [0.296529, -0.00312582, 0.092646]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -1964,7 +2026,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0108199, 0.654728, -0.218786]
+      Position: [-0.0108199, 0.664728, -0.218786]
       Rotation: [-1.56082, 1.25218, -1.46867]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -1977,8 +2039,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [0.0462174, 0.538959, 0.116453]
-      Rotation: [-1.5708, 7.15256e-07, 0.1749]
+      Position: [0.0462174, 0.548959, 0.116453]
+      Rotation: [-1.5708, 5.96046e-07, 0.1749]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 10
@@ -1992,14 +2054,34 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.00939226, 0.639957, 0.242599]
-      Rotation: [-0.00929546, 1.3126, -1.48884]
+      Position: [-0.00939226, 0.646435, 0.242598]
+      Rotation: [-0.00929473, 1.3126, -1.48884]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
       MaterialTable:
         0: 0
       Visible: true
+    RigidBodyComponent:
+      BodyType: 2
+      LayerID: 0
+      EnableDynamicTypeChange: false
+      Mass: 1
+      LinearDrag: 0.01
+      AngularDrag: 0.05
+      DisableGravity: false
+      IsTrigger: false
+      CollisionDetection: 0
+      InitialLinearVelocity: [0, 0, 0]
+      InitialAngularVelocity: [0, 0, 0]
+      MaxLinearVelocity: 500
+      MaxAngularVelocity: 50
+      LockedAxes: 0
+    SphereColliderComponent:
+      Radius: 0.05
+      Offset: [0, 0, 0]
+      Friction: 0.5
+      Restitution: 0.15
     MujocoGeomComponent:
       ID: 84
   - Entity: 9590491586782006734
@@ -2012,7 +2094,7 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [0.0285444, 0.538249, -0.264763]
+      Position: [0.0285444, 0.544729, -0.264764]
       Rotation: [3.0897, 1.36734, 1.64851]
       Scale: [1, 1, 1]
     StaticMeshComponent:
@@ -2032,8 +2114,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.00410843, 0.0421203, -0.118563]
-      Rotation: [-2.55359, 1.5708, -1.5748]
+      Position: [-0.00410843, 0.0521203, -0.118563]
+      Rotation: [-2.53832, 1.5708, -1.55157]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -2050,8 +2132,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0232844, 0.981307, 0.166534]
-      Rotation: [-1.7656, -0.0546114, -0.192496]
+      Position: [-0.0232844, 0.987786, 0.166535]
+      Rotation: [-1.7656, -0.0546108, -0.192496]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 33
@@ -2063,7 +2145,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0108199, 0.654729, 0.218777]
+      Position: [-0.0108199, 0.664729, 0.218777]
       Rotation: [-1.58078, -1.25219, -1.46867]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -2078,8 +2160,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [0.00382185, 0.805615, 3.06368e-05]
-      Rotation: [1.56968, 0.000418901, 1.69065]
+      Position: [0.00382185, 0.812094, 3.0756e-05]
+      Rotation: [1.56968, 0.000415176, 1.69065]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -2098,8 +2180,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.0102663, 1.04473, -0.155326]
-      Rotation: [0.200413, 1.29146, 1.56767]
+      Position: [-0.0102663, 1.05121, -0.155325]
+      Rotation: [0.200413, 1.29145, 1.56767]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -2118,8 +2200,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.0277648, 0.533019, 0.264931]
-      Rotation: [0.0209465, 1.36733, -1.49353]
+      Position: [-0.0277648, 0.543019, 0.264931]
+      Rotation: [0.0209463, 1.36733, -1.49353]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -2138,8 +2220,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.0150847, 0.700952, 0.226821]
-      Rotation: [-1.61475, 1.26613, -1.48216]
+      Position: [-0.0150847, 0.70743, 0.226821]
+      Rotation: [-1.61475, 1.26613, -1.48215]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -2158,8 +2240,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [0.0469122, 0.596363, 0.116091]
-      Rotation: [-1.56567, 0.0144351, -0.178193]
+      Position: [0.0469122, 0.602842, 0.11609]
+      Rotation: [-1.56567, 0.0144356, -0.178193]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -2176,8 +2258,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [0.0462174, 0.538959, -0.116451]
-      Rotation: [-1.5708, 7.15256e-07, 0.1749]
+      Position: [0.0462174, 0.545438, -0.116452]
+      Rotation: [-1.5708, -5.96046e-08, 0.1749]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 4
@@ -2189,8 +2271,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0237632, 0.900918, -0.18297]
-      Rotation: [-1.56761, 0.202193, -1.47751]
+      Position: [-0.0237632, 0.907398, -0.182969]
+      Rotation: [-1.56761, 0.202197, -1.47751]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 20
@@ -2202,7 +2284,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [0, 0.6873, -0.0644516]
+      Position: [0, 0.6973, -0.0644516]
       Rotation: [-1.5708, 0, 0]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -2217,8 +2299,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [0.0285444, 0.538249, -0.264763]
-      Rotation: [3.0897, 1.36734, 1.64852]
+      Position: [0.0285444, 0.548249, -0.264763]
+      Rotation: [3.0897, 1.36734, 1.64851]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -2237,8 +2319,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.0195661, 0.743186, 0.216668]
-      Rotation: [1.26172, 0.756917, -0.143749]
+      Position: [-0.0195661, 0.753186, 0.216668]
+      Rotation: [1.26172, 0.756916, -0.143748]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -2255,7 +2337,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0211568, 0.765771, 0.212554]
+      Position: [-0.0211568, 0.775771, 0.212554]
       Rotation: [-1.57399, -0.2022, -1.47751]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -2268,7 +2350,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0237632, 0.900919, 0.182959]
+      Position: [-0.0237632, 0.910919, 0.182959]
       Rotation: [-1.57399, -0.2022, -1.47751]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -2283,8 +2365,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.000866413, 0.661004, -0.111562]
-      Rotation: [-0.920744, 0.0945621, 0.127011]
+      Position: [-0.000866413, 0.667483, -0.111563]
+      Rotation: [-0.920741, 0.0945616, 0.127012]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -2303,8 +2385,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [0.0245366, 0.579267, 0.256628]
-      Rotation: [0.179218, 1.30421, -1.26555]
+      Position: [0.0245366, 0.589267, 0.256628]
+      Rotation: [0.179217, 1.30421, -1.26555]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -2323,8 +2405,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [0.0469127, 0.596362, -0.116088]
-      Rotation: [-1.57592, -0.0148365, -0.178189]
+      Position: [0.0469127, 0.606362, -0.116088]
+      Rotation: [-1.57592, -0.0148365, -0.178188]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -2343,8 +2425,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [0, 0.713623, 1.2517e-06]
-      Rotation: [-1.57064, 8.82149e-06, 0]
+      Position: [0, 0.723623, 1.19209e-06]
+      Rotation: [-1.57064, 8.72554e-06, 1.36652e-09]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -2363,8 +2445,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [0.0321064, 0.442391, 0.113294]
-      Rotation: [-0.856218, 1.50737, 0.424735]
+      Position: [0.0321064, 0.44887, 0.113293]
+      Rotation: [-0.856166, 1.50736, 0.424788]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -2383,8 +2465,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [0.0289907, 0.538293, 0.264753]
-      Rotation: [0.0209465, 1.36733, -1.49353]
+      Position: [0.0289907, 0.548293, 0.264753]
+      Rotation: [0.0209463, 1.36733, -1.49353]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -2403,8 +2485,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.0282111, 0.532976, -0.264941]
-      Rotation: [3.0897, 1.36734, 1.64852]
+      Position: [-0.0282111, 0.542976, -0.264941]
+      Rotation: [3.0897, 1.36734, 1.64851]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -2423,8 +2505,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.000944614, 1.06146, -0.00111377]
-      Rotation: [1.50123, 0.00016284, 1.56693]
+      Position: [-0.000944614, 1.07146, -0.00111365]
+      Rotation: [1.50123, 0.000162601, 1.56693]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -2441,7 +2523,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0246243, 0.802835, 0.204922]
+      Position: [-0.0246243, 0.812835, 0.204922]
       Rotation: [-1.57399, -0.2022, -1.47751]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -2456,8 +2538,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.0229225, 0.784638, 0.208675]
-      Rotation: [-0.169639, 0.00310278, 0.0925071]
+      Position: [-0.0229225, 0.794638, 0.208675]
+      Rotation: [-0.169638, 0.00310263, 0.092507]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -2493,8 +2575,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [0.0122881, 0.227952, -0.121328]
-      Rotation: [-1.94162, 1.40661, -0.392916]
+      Position: [0.0122881, 0.237952, -0.121328]
+      Rotation: [-1.94162, 1.40661, -0.392915]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -2513,8 +2595,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.022922, 0.784637, -0.208685]
-      Rotation: [0.169654, -0.00313997, 0.092454]
+      Position: [-0.022922, 0.794637, -0.208685]
+      Rotation: [0.169654, -0.00314008, 0.0924539]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -2531,8 +2613,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [0.0222244, 0.608198, 0.250147]
-      Rotation: [-1.57399, -0.2022, -1.47751]
+      Position: [0.0222244, 0.614676, 0.250146]
+      Rotation: [-1.57399, -0.202196, -1.47751]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 43
@@ -2567,8 +2649,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [0.0264621, 0.0190297, -0.118577]
-      Rotation: [1.57065, -0.00184178, 1.48942]
+      Position: [0.0264621, 0.0255092, -0.11858]
+      Rotation: [1.57065, -0.00184563, 1.48942]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -2587,8 +2669,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.0275087, 0.849592, -0.202164]
-      Rotation: [0.547086, 1.42543, -1.04135]
+      Position: [-0.0275087, 0.859592, -0.202164]
+      Rotation: [0.547086, 1.42544, -1.04135]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -2605,7 +2687,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [0, 0.6873, 0.0644524]
+      Position: [0, 0.6973, 0.0644524]
       Rotation: [-1.5708, 0, 0]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -2626,6 +2708,11 @@ Entities:
       MaterialTable:
         0: 5712451343787241409
       Visible: true
+    BoxColliderComponent:
+      Offset: [0, 0, 0]
+      HalfSize: [0.5, 0.5, 0.5]
+      Friction: 0.5
+      Restitution: 0.15
     MujocoBoxColliderComponent:
       Density: 500
       Friction: [1, 0.1, 0.01]
@@ -2748,7 +2835,7 @@ Entities:
         - ID: 3378399364
           Name: WalkTarget
           Type: Entity
-          Value: 9070304970153756617
+          Value: 2276781885538871374
         - ID: 3244213740
           Name: WalkSpeed
           Type: Float
@@ -2848,15 +2935,15 @@ Entities:
     RobotControllerComponent:
       MotionGraph: 8061456442116465881
       GraphInputs:
-        3242511199: [0, 0, 0]
-        618274463: [0, 0, 0]
+        3242511199: [5, 0.0331367, 0.118509]
+        618274463: [-90.0002, 0, 0]
         582496727: 3
-        2970542926: [0, 0, 0]
-        507974345: [0, 0, 0]
-        2633557425: [0, 0, 0]
-        175048108: [0, 0, 0]
-        1443923940: [0, 0, 0]
-        2121137962: [0, 0, 0]
+        2970542926: [-78.4147, -0.179132, -174.692]
+        507974345: [5.00486, 0.595032, 0.247868]
+        2633557425: [-101.585, 0.179096, -174.692]
+        175048108: [4.98495, 0.59318, -0.247939]
+        1443923940: [-90.0002, 0, 0]
+        2121137962: [5, 0.0331359, -0.118504]
         1656431521: [0, 0, 0]
         2498620193: true
         1473792390: 0
@@ -2900,7 +2987,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-2.38419e-06, 0.0331359, -0.118504]
+      Position: [-2.38419e-06, 0.0396155, -0.118507]
       Rotation: [-1.5708, 0, 0]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -2913,8 +3000,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [0.00486088, 0.595032, 0.247868]
-      Rotation: [-1.3686, -0.00312638, -3.04895]
+      Position: [0.00486088, 0.605032, 0.247868]
+      Rotation: [-1.3686, -0.00312646, -3.04895]
       Scale: [1, 1, 1]
   - Entity: 13707531672949959446
     Domain: Client
@@ -2924,7 +3011,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.00274754, 1.07923, 0.140474]
+      Position: [-0.00274754, 1.08923, 0.140474]
       Rotation: [-1.7656, -0.0546114, -0.192496]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -2937,7 +3024,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0303512, 0.558251, -0.259531]
+      Position: [-0.0303512, 0.568251, -0.259531]
       Rotation: [-1.56761, 0.202193, -1.47751]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -2952,8 +3039,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.0229225, 0.784638, 0.208675]
-      Rotation: [-0.169638, 0.00310254, 0.0925071]
+      Position: [-0.0229225, 0.791116, 0.208675]
+      Rotation: [-0.169635, 0.0031023, 0.092507]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -2972,8 +3059,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.00396347, 0.834, -2.98023e-07]
-      Rotation: [-1.52873, 1.57045, -1.52873]
+      Position: [-0.00396347, 0.844, -2.98023e-07]
+      Rotation: [-1.52663, 1.57045, -1.52663]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -2990,7 +3077,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-2.38419e-06, 0.350705, 0.118602]
+      Position: [-2.38419e-06, 0.360705, 0.118602]
       Rotation: [-1.5708, 0, 0]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -3003,7 +3090,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [0.0264039, 0.563525, -0.259353]
+      Position: [0.0264039, 0.573525, -0.259353]
       Rotation: [-1.56761, 0.202193, -1.47751]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -3018,8 +3105,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.0322185, 0.573994, 0.256806]
-      Rotation: [0.179218, 1.30421, -1.26555]
+      Position: [-0.0322185, 0.580472, 0.256805]
+      Rotation: [0.179222, 1.30421, -1.26555]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -3038,8 +3125,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.0107236, 0.653886, -0.224654]
-      Rotation: [0.296529, -0.00312591, 0.0926461]
+      Position: [-0.0107236, 0.660366, -0.224655]
+      Rotation: [0.296532, -0.00312616, 0.092646]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -3058,8 +3145,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [0.000896454, 0.981513, -0.00211048]
-      Rotation: [-1.56704, 0.00421071, -0.00909662]
+      Position: [0.000896454, 0.987992, -0.00210965]
+      Rotation: [-1.56704, 0.00421073, -0.00909664]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -3078,8 +3165,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [0.0264673, 0.0190303, 0.118582]
-      Rotation: [1.57097, 0.00179625, 1.48941]
+      Position: [0.0264673, 0.0290302, 0.118582]
+      Rotation: [1.57097, 0.00179592, 1.48941]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -3096,8 +3183,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.00274754, 1.07923, 0.140474]
-      Rotation: [-1.7656, -0.0546114, -0.192496]
+      Position: [-0.00274754, 1.08571, 0.140475]
+      Rotation: [-1.7656, -0.0546108, -0.192496]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 32
@@ -3111,8 +3198,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.000866413, 0.661004, 0.111562]
-      Rotation: [-2.2209, -0.0946031, 0.127053]
+      Position: [-0.000866413, 0.671004, 0.111562]
+      Rotation: [-2.2209, -0.0946032, 0.127053]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -3131,7 +3218,7 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.0275078, 0.849593, 0.202152]
+      Position: [-0.0275078, 0.859593, 0.202152]
       Rotation: [-2.59384, 1.42543, 2.10091]
       Scale: [1, 1, 1]
     StaticMeshComponent:
@@ -3149,8 +3236,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [0.0264039, 0.563525, -0.259353]
-      Rotation: [-1.56761, 0.202193, -1.47751]
+      Position: [0.0264039, 0.570005, -0.259354]
+      Rotation: [-1.56761, 0.202197, -1.47751]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 30
@@ -3162,8 +3249,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0232844, 0.981306, -0.166546]
-      Rotation: [-1.37599, 0.0546103, -0.192496]
+      Position: [-0.0232844, 0.987786, -0.166545]
+      Rotation: [-1.37599, 0.0546109, -0.192496]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 19
@@ -3175,7 +3262,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.00396347, 0.834, -1.78814e-07]
+      Position: [-0.00396347, 0.844, -1.19209e-07]
       Rotation: [-1.5708, 0, 0]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -3190,8 +3277,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.000866413, 0.661003, -0.111562]
-      Rotation: [-0.920745, 0.0945621, 0.127011]
+      Position: [-0.000866413, 0.671003, -0.111562]
+      Rotation: [-0.920744, 0.0945621, 0.127011]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -3210,8 +3297,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [0.0264621, 0.0190296, -0.118577]
-      Rotation: [1.57065, -0.00184155, 1.48942]
+      Position: [0.0264621, 0.0290296, -0.118577]
+      Rotation: [1.57065, -0.00184178, 1.48942]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -3228,7 +3315,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-2.38419e-06, 0.0331367, 0.118509]
+      Position: [-2.38419e-06, 0.0396154, 0.118506]
       Rotation: [-1.5708, 0, 0]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -3241,8 +3328,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-7.15256e-06, 1.08178, -0.100221]
-      Rotation: [-1.29674, 0.0546103, -0.192496]
+      Position: [-7.15256e-06, 1.08826, -0.10022]
+      Rotation: [-1.29674, 0.0546109, -0.192496]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 17
@@ -3256,7 +3343,7 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.00864649, 0.626737, -0.208981]
+      Position: [-0.00864649, 0.636737, -0.208981]
       Rotation: [0.129816, 1.18867, -1.31246]
       Scale: [1, 1, 1]
     StaticMeshComponent:
@@ -3276,8 +3363,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [0.000896454, 0.981513, -0.00211048]
-      Rotation: [-1.56704, 0.00421071, -0.00909662]
+      Position: [0.000896454, 0.991513, -0.00211042]
+      Rotation: [-1.56704, 0.0042107, -0.00909666]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -3294,8 +3381,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.00684071, 0.611416, 0.204431]
-      Rotation: [-1.58078, -1.25219, -1.46867]
+      Position: [-0.00684071, 0.617895, 0.20443]
+      Rotation: [-1.58078, -1.25218, -1.46867]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 40
@@ -3307,8 +3394,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [0, 0.656835, 0.116453]
-      Rotation: [-1.5708, 7.15256e-07, 0.1749]
+      Position: [0, 0.666835, 0.116452]
+      Rotation: [-1.5708, 5.96046e-07, 0.1749]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 9
@@ -3322,8 +3409,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.00481749, 0.586933, 0.196114]
-      Rotation: [0.0265594, -1.25095, -1.46857]
+      Position: [-0.00481749, 0.593412, 0.196113]
+      Rotation: [0.0265606, -1.25094, -1.46857]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -3340,8 +3427,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0246243, 0.802835, 0.204922]
-      Rotation: [-1.57399, -0.2022, -1.47751]
+      Position: [-0.0246243, 0.809314, 0.204922]
+      Rotation: [-1.57399, -0.202196, -1.47751]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 35
@@ -3355,8 +3442,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.00179482, 1.08291, -0.135831]
-      Rotation: [0.0162029, 0.707177, 1.35197]
+      Position: [-0.00179482, 1.09291, -0.135831]
+      Rotation: [0.0162032, 0.707177, 1.35197]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -3375,8 +3462,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.0107236, 0.653888, 0.224645]
-      Rotation: [-0.296535, 0.00312638, 0.0926459]
+      Position: [-0.0107236, 0.663888, 0.224645]
+      Rotation: [-0.296535, 0.00312644, 0.092646]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -3393,7 +3480,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0345306, 0.602923, -0.250334]
+      Position: [-0.0345306, 0.612923, -0.250334]
       Rotation: [-1.56761, 0.202193, -1.47751]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -3408,8 +3495,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [0.00368738, 1.21913, -2.6226e-05]
-      Rotation: [-1.57078, 0.000109434, -0.0455916]
+      Position: [0.00368738, 1.22561, -2.46763e-05]
+      Rotation: [-1.57077, 0.000109673, -0.0455916]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -3426,7 +3513,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [0.0452499, 0.70661, 3.57628e-07]
+      Position: [0.0452499, 0.713089, 5.96046e-08]
       Rotation: [-1.5708, 0, 0]
       Scale: [1, 1, 1]
   - Entity: 16622221566575623326
@@ -3439,8 +3526,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.0314331, 0.574065, -0.256812]
-      Rotation: [2.93929, 1.30283, 1.42858]
+      Position: [-0.0314331, 0.584065, -0.256812]
+      Rotation: [2.93928, 1.30283, 1.42858]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -3457,7 +3544,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.00396347, 0.834, -1.78814e-07]
+      Position: [-0.00396347, 0.840479, 5.96046e-08]
       Rotation: [-1.5708, 0, 0]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -3472,8 +3559,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.00179482, 1.08291, -0.135831]
-      Rotation: [0.0162032, 0.707177, 1.35197]
+      Position: [-0.00179482, 1.08939, -0.13583]
+      Rotation: [0.0162039, 0.707173, 1.35197]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -3490,7 +3577,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-2.38419e-06, 0.0331359, -0.118504]
+      Position: [-2.38419e-06, 0.0396155, -0.118507]
       Rotation: [-1.5708, 0, 0]
       Scale: [1, 1, 1]
   - Entity: 16967156269384325464
@@ -3503,7 +3590,7 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.0248785, 0.932601, 0.172175]
+      Position: [-0.0248785, 0.942601, 0.172175]
       Rotation: [-2.20911, 1.40556, -0.578405]
       Scale: [1, 1, 1]
     StaticMeshComponent:
@@ -3523,8 +3610,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [0.0253224, 0.579338, -0.256634]
-      Rotation: [2.93929, 1.30283, 1.42858]
+      Position: [0.0253224, 0.589339, -0.256634]
+      Rotation: [2.93928, 1.30283, 1.42858]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -3541,8 +3628,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [0.0222244, 0.608197, -0.250156]
-      Rotation: [-1.56761, 0.202193, -1.47751]
+      Position: [0.0222244, 0.614677, -0.250156]
+      Rotation: [-1.56761, 0.202197, -1.47751]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 29
@@ -3556,8 +3643,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [0, 0.713623, 1.2517e-06]
-      Rotation: [-1.57064, 8.82149e-06, 0]
+      Position: [0, 0.720103, 9.53674e-07]
+      Rotation: [-1.57064, 8.72554e-06, 1.39926e-09]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -3576,8 +3663,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.00437117, 0.586973, -0.196121]
-      Rotation: [0.0464437, 1.25094, -1.46886]
+      Position: [-0.00437117, 0.596973, -0.196121]
+      Rotation: [0.0464435, 1.25094, -1.46886]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -3596,7 +3683,7 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [0.0122886, 0.22795, 0.121331]
+      Position: [0.0122886, 0.23795, 0.121331]
       Rotation: [1.20037, 1.40652, 2.74908]
       Scale: [1, 1, 1]
     StaticMeshComponent:
@@ -3614,8 +3701,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0211568, 0.765771, 0.212554]
-      Rotation: [-1.57399, -0.2022, -1.47751]
+      Position: [-0.0211568, 0.77225, 0.212554]
+      Rotation: [-1.57399, -0.202196, -1.47751]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 36
@@ -3629,8 +3716,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.0277648, 0.533019, 0.264931]
-      Rotation: [0.020946, 1.36733, -1.49353]
+      Position: [-0.0277648, 0.539497, 0.26493]
+      Rotation: [0.0209483, 1.36734, -1.49353]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -3649,7 +3736,7 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [-0.0150867, 0.700949, -0.226831]
+      Position: [-0.0150867, 0.710949, -0.226831]
       Rotation: [1.52709, 1.26607, 1.65943]
       Scale: [1, 1, 1]
     StaticMeshComponent:
@@ -3669,8 +3756,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [0.0469122, 0.596363, 0.116091]
-      Rotation: [-1.56567, 0.0144348, -0.178193]
+      Position: [0.0469122, 0.606363, 0.116091]
+      Rotation: [-1.56567, 0.014435, -0.178193]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -3687,7 +3774,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-2.38419e-06, 0.350704, -0.118599]
+      Position: [-2.38419e-06, 0.360704, -0.118599]
       Rotation: [-1.5708, 0, 0]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -3702,8 +3789,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [0.0264673, 0.0190302, 0.118582]
-      Rotation: [1.57097, 0.00179601, 1.48941]
+      Position: [0.0264673, 0.0255089, 0.118579]
+      Rotation: [1.57097, 0.00179219, 1.48941]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -3828,7 +3915,7 @@ Entities:
         - ID: 3378399364
           Name: WalkTarget
           Type: Entity
-          Value: 9070304970153756617
+          Value: 2276781885538871374
         - ID: 3244213740
           Name: WalkSpeed
           Type: Float
@@ -3926,17 +4013,17 @@ Entities:
           Type: String
           Value: pelvis
     RobotControllerComponent:
-      MotionGraph: 8061456442116465881
+      MotionGraph: 12951134606499154539
       GraphInputs:
-        3242511199: [0, 0, 0]
-        618274463: [0, 0, 0]
+        3242511199: [-5, 0.0361366, 0.118506]
+        618274463: [-90, -9.47879e-23, 1.59028e-15]
         582496727: 3
-        2970542926: [0, 0, 0]
-        507974345: [0, 0, 0]
-        2633557425: [0, 0, 0]
-        175048108: [0, 0, 0]
-        1443923940: [0, 0, 0]
-        2121137962: [0, 0, 0]
+        2970542926: [-78.4149, -0.179113, -174.692]
+        507974345: [-4.99514, 0.598031, 0.247867]
+        2633557425: [-101.585, 0.179115, -174.692]
+        175048108: [-5.01505, 0.596181, -0.247939]
+        1443923940: [-90, -9.47879e-23, 1.59028e-15]
+        2121137962: [-5, 0.0361367, -0.118506]
         1656431521: [0, 0, 0]
         2498620193: true
         1473792390: 0
@@ -3971,7 +4058,7 @@ Entities:
           Priority: 0
           ClampObservationForUnclaimedJoints: true
     MujocoSceneComponent:
-      MujocoScene: 12772981509664864346
+      MujocoScene: 13296134937204718545
   - Entity: 17666479752657666857
     Domain: Client
     TagComponent:
@@ -3980,7 +4067,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [0, 0.6873, -0.0644516]
+      Position: [0, 0.693779, -0.0644519]
       Rotation: [-1.5708, 0, 0]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
@@ -3995,8 +4082,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [0.00368738, 1.21913, -2.63453e-05]
-      Rotation: [-1.57078, 0.000109434, -0.0455916]
+      Position: [0.00368738, 1.22913, -2.6226e-05]
+      Rotation: [-1.57078, 0.000109507, -0.0455916]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -4015,8 +4102,8 @@ Entities:
     MetadataComponent:
       Data: "Group: 2\nConDim: 3\nConAffinity: 0\nConType: 0"
     TransformComponent:
-      Position: [0.000687122, 0.711406, -2.37226e-05]
-      Rotation: [-1.92886, 1.56907, -1.90524]
+      Position: [0.000687122, 0.721406, -2.3663e-05]
+      Rotation: [-1.92879, 1.56907, -1.90518]
       Scale: [1, 1, 1]
     StaticMeshComponent:
       AssetID: 0
@@ -4033,8 +4120,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0246243, 0.802834, -0.204932]
-      Rotation: [-1.56761, 0.202193, -1.47751]
+      Position: [-0.0246243, 0.809314, -0.204932]
+      Rotation: [-1.56761, 0.202197, -1.47751]
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 21
@@ -4046,7 +4133,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-0.0435534, 0.98192, 0.00223929]
+      Position: [-0.0435534, 0.99192, 0.00223935]
       Rotation: [-1.5708, 0, 0]
       Scale: [1, 1, 1]
 SceneAudio:

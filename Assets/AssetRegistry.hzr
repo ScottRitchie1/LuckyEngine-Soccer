@@ -162,7 +162,7 @@ Assets:
     FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/left_shoulder_yaw_link.STL
     Type: MeshSource
   - Handle: 8061456442116465881
-    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/MG_UnitreeG1ThreeFingers.hmograph
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/MG_UnitreeG1ThreeFingers_Blue.hmograph
     Type: MotionGraph
   - Handle: 8081499440683993017
     FilePath: Meshes/Default/Source/Cone.gltf
@@ -282,11 +282,17 @@ Assets:
     FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/right_hand_thumb_0_link.STL
     Type: MeshSource
   - Handle: 12772981509664864346
-    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/g1_three_fingers.xml
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/g1_three_fingers_blue.xml
     Type: MujocoScene
+  - Handle: 12951134606499154539
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/MG_UnitreeG1ThreeFingers_Red.hmograph
+    Type: MotionGraph
   - Handle: 13272923416350764492
     FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_1_floor_Mujoco_Geom_9PF504YOILC6HJDCX9E6MVLVU_floor_Mujoco_77182.obj
     Type: MeshSource
+  - Handle: 13296134937204718545
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/g1_three_fingers_red.xml
+    Type: MujocoScene
   - Handle: 13452911905905718915
     FilePath: Scripts/Binaries/Soccer.runtimeconfig.json
     Type: Motion
