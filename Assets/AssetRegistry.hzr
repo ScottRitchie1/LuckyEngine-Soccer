@@ -278,6 +278,9 @@ Assets:
   - Handle: 12378787818741788584
     FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/left_wrist_roll_link.STL
     Type: MeshSource
+  - Handle: 12403896343523160572
+    FilePath: Materials/Wall.hmaterial
+    Type: Material
   - Handle: 12533348633626904688
     FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/right_hand_thumb_0_link.STL
     Type: MeshSource

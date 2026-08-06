@@ -160,11 +160,11 @@ SceneSettings:
     RegisteredTasks:
       []
   EditorCamera:
-    Position: [0.287983, 4.37123, 8.7426]
-    FocalPoint: [0.606987, 0.983482, 0.778848]
+    Position: [4.7036, 1.16016, -1.53666]
+    FocalPoint: [13.1997, -0.451738, -1.06884]
     Distance: 8.66025
-    Pitch: 0.401917
-    Yaw: 0.0405252
+    Pitch: 0.187217
+    Yaw: 1.6258
   RendererSettings:
     Shadows:
       CascadeNearPlaneOffset: 0
@@ -201,6 +201,33 @@ Entities:
       Visible: true
     MujocoGeomComponent:
       ID: 62
+  - Entity: 133568131999851086
+    Domain: Client
+    TagComponent:
+      Tag: Wall
+    Parent: 13297301893240040455
+    Children:
+      []
+    TransformComponent:
+      Position: [-0.469989, 1.83166, -0.46]
+      Rotation: [0, 0.785398, 0]
+      Scale: [0.1, 3.74027, 0.05]
+    StaticMeshComponent:
+      AssetID: 4241663774595030205
+      MaterialTable:
+        0: 12403896343523160572
+      Visible: true
+    BoxColliderComponent:
+      Offset: [0, 0, 0]
+      HalfSize: [0.5, 0.5, 0.5]
+      Friction: 0.5
+      Restitution: 0.15
+    MujocoBoxColliderComponent:
+      Density: 500
+      Friction: [1, 0.1, 0.01]
+      Contype: 1
+      Conaffinity: 1
+      Condim: -1
   - Entity: 174910700604581402
     Domain: Client
     TagComponent:
@@ -629,7 +656,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [0.0331312, 0.731554, -0.433137]
+      Position: [0.0194329, 0.719482, -0.46412]
       Rotation: [0, 0, 0]
       Scale: [1, 1, 1]
     StaticMeshComponent:
@@ -642,8 +669,8 @@ Entities:
       LayerID: 0
       EnableDynamicTypeChange: false
       Mass: 1
-      LinearDrag: 0.01
-      AngularDrag: 0.05
+      LinearDrag: 0.1
+      AngularDrag: 0.2
       DisableGravity: false
       IsTrigger: false
       CollisionDetection: 0
@@ -847,6 +874,33 @@ Entities:
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 18
+  - Entity: 3006337417572574357
+    Domain: Client
+    TagComponent:
+      Tag: Wall
+    Parent: 13297301893240040455
+    Children:
+      []
+    TransformComponent:
+      Position: [0.51, 1.83166, 0.379117]
+      Rotation: [0, 0, 0]
+      Scale: [0.04, 3.74027, 0.3]
+    StaticMeshComponent:
+      AssetID: 4241663774595030205
+      MaterialTable:
+        0: 12403896343523160572
+      Visible: true
+    BoxColliderComponent:
+      Offset: [0, 0, 0]
+      HalfSize: [0.5, 0.5, 0.5]
+      Friction: 0.5
+      Restitution: 0.15
+    MujocoBoxColliderComponent:
+      Density: 500
+      Friction: [1, 0.1, 0.01]
+      Contype: 1
+      Conaffinity: 1
+      Condim: -1
   - Entity: 3171726964292027650
     Domain: Client
     TagComponent:
@@ -873,6 +927,33 @@ Entities:
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 12
+  - Entity: 3190868051507998217
+    Domain: Client
+    TagComponent:
+      Tag: Wall
+    Parent: 13297301893240040455
+    Children:
+      []
+    TransformComponent:
+      Position: [-0.506828, 1.83166, 0.379117]
+      Rotation: [0, 0, 0]
+      Scale: [0.04, 3.74027, 0.3]
+    StaticMeshComponent:
+      AssetID: 4241663774595030205
+      MaterialTable:
+        0: 12403896343523160572
+      Visible: true
+    BoxColliderComponent:
+      Offset: [0, 0, 0]
+      HalfSize: [0.5, 0.5, 0.5]
+      Friction: 0.5
+      Restitution: 0.15
+    MujocoBoxColliderComponent:
+      Density: 500
+      Friction: [1, 0.1, 0.01]
+      Contype: 1
+      Conaffinity: 1
+      Condim: -1
   - Entity: 3217749380954203025
     Domain: Client
     TagComponent:
@@ -989,6 +1070,60 @@ Entities:
       Position: [-0.0435534, 0.988399, 0.00224012]
       Rotation: [-1.5708, 0, 0]
       Scale: [1, 1, 1]
+  - Entity: 3761918866789985746
+    Domain: Client
+    TagComponent:
+      Tag: Wall
+    Parent: 13297301893240040455
+    Children:
+      []
+    TransformComponent:
+      Position: [0, 1.83166, -0.514294]
+      Rotation: [0, 0, 0]
+      Scale: [1, 3.74027, 0.0375337]
+    StaticMeshComponent:
+      AssetID: 4241663774595030205
+      MaterialTable:
+        0: 12403896343523160572
+      Visible: true
+    BoxColliderComponent:
+      Offset: [0, 0, 0]
+      HalfSize: [0.5, 0.5, 0.5]
+      Friction: 0.5
+      Restitution: 0.15
+    MujocoBoxColliderComponent:
+      Density: 500
+      Friction: [1, 0.1, 0.01]
+      Contype: 1
+      Conaffinity: 1
+      Condim: -1
+  - Entity: 3780587663983418937
+    Domain: Client
+    TagComponent:
+      Tag: Wall
+    Parent: 13297301893240040455
+    Children:
+      []
+    TransformComponent:
+      Position: [0, 1.83166, 0.51]
+      Rotation: [0, 0, 0]
+      Scale: [1, 3.74027, 0.0375337]
+    StaticMeshComponent:
+      AssetID: 4241663774595030205
+      MaterialTable:
+        0: 12403896343523160572
+      Visible: true
+    BoxColliderComponent:
+      Offset: [0, 0, 0]
+      HalfSize: [0.5, 0.5, 0.5]
+      Friction: 0.5
+      Restitution: 0.15
+    MujocoBoxColliderComponent:
+      Density: 500
+      Friction: [1, 0.1, 0.01]
+      Contype: 1
+      Conaffinity: 1
+      Condim: -1
   - Entity: 3794429779122623833
     Domain: Client
     TagComponent:
@@ -1528,6 +1663,60 @@ Entities:
       Visible: true
     MujocoGeomComponent:
       ID: 98
+  - Entity: 6633701883153221613
+    Domain: Client
+    TagComponent:
+      Tag: Wall
+    Parent: 13297301893240040455
+    Children:
+      []
+    TransformComponent:
+      Position: [0.467378, 1.83166, 0.459228]
+      Rotation: [0, 0.785398, 0]
+      Scale: [0.1, 3.74027, 0.05]
+    StaticMeshComponent:
+      AssetID: 4241663774595030205
+      MaterialTable:
+        0: 12403896343523160572
+      Visible: true
+    BoxColliderComponent:
+      Offset: [0, 0, 0]
+      HalfSize: [0.5, 0.5, 0.5]
+      Friction: 0.5
+      Restitution: 0.15
+    MujocoBoxColliderComponent:
+      Density: 500
+      Friction: [1, 0.1, 0.01]
+      Contype: 1
+      Conaffinity: 1
+      Condim: -1
+  - Entity: 6635103153441305392
+    Domain: Client
+    TagComponent:
+      Tag: Wall
+    Parent: 13297301893240040455
+    Children:
+      []
+    TransformComponent:
+      Position: [0.51, 1.83166, -0.383039]
+      Rotation: [0, 0, 0]
+      Scale: [0.04, 3.74027, 0.3]
+    StaticMeshComponent:
+      AssetID: 4241663774595030205
+      MaterialTable:
+        0: 12403896343523160572
+      Visible: true
+    BoxColliderComponent:
+      Offset: [0, 0, 0]
+      HalfSize: [0.5, 0.5, 0.5]
+      Friction: 0.5
+      Restitution: 0.15
+    MujocoBoxColliderComponent:
+      Density: 500
+      Friction: [1, 0.1, 0.01]
+      Contype: 1
+      Conaffinity: 1
+      Condim: -1
   - Entity: 6684960931467822361
     Domain: Client
     TagComponent:
@@ -1686,6 +1875,33 @@ Entities:
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 21
+  - Entity: 7556452285556160246
+    Domain: Client
+    TagComponent:
+      Tag: Wall
+    Parent: 13297301893240040455
+    Children:
+      []
+    TransformComponent:
+      Position: [-0.506828, 1.83166, -0.383039]
+      Rotation: [0, 0, 0]
+      Scale: [0.04, 3.74027, 0.3]
+    StaticMeshComponent:
+      AssetID: 4241663774595030205
+      MaterialTable:
+        0: 12403896343523160572
+      Visible: true
+    BoxColliderComponent:
+      Offset: [0, 0, 0]
+      HalfSize: [0.5, 0.5, 0.5]
+      Friction: 0.5
+      Restitution: 0.15
+    MujocoBoxColliderComponent:
+      Density: 500
+      Friction: [1, 0.1, 0.01]
+      Contype: 1
+      Conaffinity: 1
+      Condim: -1
   - Entity: 7559573100916980061
     Domain: Client
     TagComponent:
@@ -2250,6 +2466,33 @@ Entities:
       Visible: true
     MujocoGeomComponent:
       ID: 20
+  - Entity: 10364182925272145868
+    Domain: Client
+    TagComponent:
+      Tag: Wall
+    Parent: 13297301893240040455
+    Children:
+      []
+    TransformComponent:
+      Position: [-0.469989, 1.83166, 0.455965]
+      Rotation: [0, -0.785398, 0]
+      Scale: [0.1, 3.74027, 0.05]
+    StaticMeshComponent:
+      AssetID: 4241663774595030205
+      MaterialTable:
+        0: 12403896343523160572
+      Visible: true
+    BoxColliderComponent:
+      Offset: [0, 0, 0]
+      HalfSize: [0.5, 0.5, 0.5]
+      Friction: 0.5
+      Restitution: 0.15
+    MujocoBoxColliderComponent:
+      Density: 500
+      Friction: [1, 0.1, 0.01]
+      Contype: 1
+      Conaffinity: 1
+      Condim: -1
   - Entity: 10464330433098880489
     Domain: Client
     TagComponent:
@@ -2698,7 +2941,16 @@ Entities:
       Tag: Ground
     Parent: 0
     Children:
-      []
+      - Handle: 3761918866789985746
+      - Handle: 3780587663983418937
+      - Handle: 3190868051507998217
+      - Handle: 7556452285556160246
+      - Handle: 3006337417572574357
+      - Handle: 6635103153441305392
+      - Handle: 6633701883153221613
+      - Handle: 10364182925272145868
+      - Handle: 133568131999851086
+      - Handle: 13389507655344841393
     TransformComponent:
       Position: [0, -0.1, 0]
       Rotation: [0, 0, 0]
@@ -2843,7 +3095,7 @@ Entities:
         - ID: 2926452953
           Name: StandDistance
           Type: Float
-          Value: 1.002
+          Value: 0.85
         - ID: 3600623034
           Name: ArriveTolerance
           Type: Float
@@ -2895,11 +3147,11 @@ Entities:
         - ID: 4067851637
           Name: PushReach
           Type: Float
-          Value: 0.5
+          Value: 0.6
         - ID: 1003295581
           Name: PushHeight
           Type: Float
-          Value: 0.1
+          Value: 0.15
         - ID: 887362834
           Name: HoldBeforePush
           Type: Float
@@ -2992,6 +3244,33 @@ Entities:
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 7
+  - Entity: 13389507655344841393
+    Domain: Client
+    TagComponent:
+      Tag: Wall
+    Parent: 13297301893240040455
+    Children:
+      []
+    TransformComponent:
+      Position: [0.47, 1.83166, -0.46]
+      Rotation: [0, -0.785398, 0]
+      Scale: [0.1, 3.74027, 0.05]
+    StaticMeshComponent:
+      AssetID: 4241663774595030205
+      MaterialTable:
+        0: 12403896343523160572
+      Visible: true
+    BoxColliderComponent:
+      Offset: [0, 0, 0]
+      HalfSize: [0.5, 0.5, 0.5]
+      Friction: 0.5
+      Restitution: 0.15
+    MujocoBoxColliderComponent:
+      Density: 500
+      Friction: [1, 0.1, 0.01]
+      Contype: 1
+      Conaffinity: 1
+      Condim: -1
   - Entity: 13657653978521476977
     Domain: Client
     TagComponent:
@@ -3923,7 +4202,7 @@ Entities:
         - ID: 2926452953
           Name: StandDistance
           Type: Float
-          Value: 1.002
+          Value: 0.85
         - ID: 3600623034
           Name: ArriveTolerance
           Type: Float
@@ -3975,11 +4254,11 @@ Entities:
         - ID: 4067851637
           Name: PushReach
           Type: Float
-          Value: 0.5
+          Value: 0.6
         - ID: 1003295581
           Name: PushHeight
           Type: Float
-          Value: 0.1
+          Value: 0.15
         - ID: 887362834
           Name: HoldBeforePush
           Type: Float

@@ -26,7 +26,7 @@ namespace Soccer
 
 		[Group("Locomotion")] [Units("m")] [Slider(0.0f, 2.0f)]
 		[Tooltip("Stop this far (XZ) from the target, then push.")]
-		public float StandDistance = 1.002f;
+		public float StandDistance = 0.85f;
 
 		[Group("Locomotion")] [Units("m")] [Slider(0.0f, 0.5f)]
 		[Tooltip("Distance dead-zone around StandDistance - prevents creeping/oscillation at arrival.")]
@@ -73,11 +73,11 @@ namespace Soccer
 
 		[Group("Push")] [Units("m")] [Slider(0.0f, 0.7f)]
 		[Tooltip("How far forward the hands extend at full push.")]
-		public float PushReach = 0.5f;
+		public float PushReach = 0.6f;
 
 		[Group("Push")] [Units("m")] [Slider(-0.2f, 0.3f)]
 		[Tooltip("Vertical offset of the hands at full push, relative to resting position.")]
-		public float PushHeight = 0.10f;
+		public float PushHeight = 0.15f;
 
 		// ── Push timing ───────────────────────────────────────────────────
 		[Group("Push Timing")] [Units("s")] [Slider(0.0f, 2.0f)]
