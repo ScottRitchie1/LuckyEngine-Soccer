@@ -26,11 +26,11 @@ namespace Soccer
 		// ── Locomotion ────────────────────────────────────────────────────
 		[Group("Locomotion")] [Units("m/s")] [Slider(0.0f, 1.5f)]
 		[Tooltip("Forward speed while travelling. The walker policy was trained around 0.5 m/s.")]
-		public float WalkSpeed = 1.2f;
+		public float WalkSpeed = 0.8f;
 
 		[Group("Locomotion")] [Units("m")] [Slider(0.0f, 2.0f)]
 		[Tooltip("Stop this far (XZ) from the target, then push.")]
-		public float StandDistance = 1f;
+		public float StandDistance = 1.002f;
 
 		[Group("Locomotion")] [Units("m")] [Slider(0.0f, 0.5f)]
 		[Tooltip("Distance dead-zone around StandDistance - prevents creeping/oscillation at arrival.")]
@@ -38,15 +38,23 @@ namespace Soccer
 
 		[Group("Locomotion")] [Slider(0.0f, 10.0f)]
 		[Tooltip("Proportional gain: yawRate = clamp(headingError * YawGain, ±MaxYawRate).")]
-		public float YawGain = 2.0f;
+		public float YawGain = 4f;
 
 		[Group("Locomotion")] [Units("rad/s")] [Slider(0.0f, 3.0f)]
 		[Tooltip("Cap on commanded yaw rate. The walker destabilises if asked to turn faster than it was trained for.")]
-		public float MaxYawRate = 1.0f;
+		public float MaxYawRate = 2f;
 
 		[Group("Locomotion")]
 		[Tooltip("With a Goal set, walking straight at the approach point (opposite side of the ball from the Goal) can cut straight across the ball if the robot starts out on the Goal's side of it. When enabled, the robot instead sweeps around the ball at StandDistance - from its current bearing around to the approach bearing - producing a curving, ball-clearing path. Disable to walk straight at the approach point.")]
 		public bool CurveAroundBall = true;
+
+		[Group("Locomotion")] [Units("s")] [Slider(0.2f, 5.0f)]
+		[Tooltip("If the robot makes no meaningful XZ progress for this long while trying to walk, treat it as stuck - e.g. wedged against a wall between it and a steering/approach point that's unreachable from here - and fall back to just turning to face the ball directly (dropping the curve-around steering) until roughly aligned, then resume walking normally.")]
+		public float StuckTimeout = 1.5f;
+
+		[Group("Locomotion")] [Units("m")] [Slider(0.0f, 0.3f)]
+		[Tooltip("Minimum XZ movement within StuckTimeout to NOT be considered stuck.")]
+		public float StuckMoveThreshold = 0.05f;
 
 		// ── Facing (turn-to-face before walking) ──────────────────────────
 		[Group("Facing")]
@@ -57,18 +65,18 @@ namespace Soccer
 		public uint RotatorSlotId = 2u;
 		[Group("Facing")] [Units("rad")] [Slider(0.02f, 0.5f)]
 		[Tooltip("Stop turning once the heading error is below this (~0.12 rad ≈ 7°).")]
-		public float FaceYawTolerance = 0.12f;
+		public float FaceYawTolerance = 0.224f;
 		[Group("Facing")] [Units("s")] [Slider(0.0f, 2.0f)]
 		[Tooltip("Settle the walker at a standstill before switching to the rotator, so it doesn't inherit forward momentum.")]
-		public float PreTurnSettle = 0.4f;
+		public float PreTurnSettle = 0.679f;
 		[Group("Facing")] [Units("s")] [Slider(0.0f, 2.0f)]
 		[Tooltip("Ramp the turn rate in over this long to avoid a lurch on the walker→rotator handoff.")]
-		public float TurnRampIn = 0.5f;
+		public float TurnRampIn = 0.877f;
 		[Group("Facing")] [Units("s")] [Slider(1.0f, 20.0f)]
-		public float FaceTimeout = 8.0f;
+		public float FaceTimeout = 4.675f;
 		[Group("Facing")] [Units("m/s")] [Slider(0.0f, 0.5f)]
 		[Tooltip("This robot has no rotator policy registered, so the turn-in-place falls back to the walker with a pure yaw command - which often produces no visible turn at a dead stop. This adds a small forward nudge during the fallback turn so the walker actually steps and pivots. Only used when the rotator is unavailable.")]
-		public float WalkerFallbackTurnVx = 0.091f;
+		public float WalkerFallbackTurnVx = 0.157f;
 
 		// ── Push shape ────────────────────────────────────────────────────
 		[Group("Push")] [Units("m")] [Slider(0.0f, 0.3f)]
@@ -77,15 +85,15 @@ namespace Soccer
 
 		[Group("Push")] [Units("m")] [Slider(-0.2f, 0.3f)]
 		[Tooltip("Vertical offset of the hands during windup, relative to resting position (raises them to roughly chest height).")]
-		public float WindupLift = 0.15f;
+		public float WindupLift = 0.3f;
 
 		[Group("Push")] [Units("m")] [Slider(0.0f, 0.7f)]
 		[Tooltip("How far forward the hands extend at full push.")]
-		public float PushReach = 0.5f;
+		public float PushReach = 0.7f;
 
 		[Group("Push")] [Units("m")] [Slider(-0.2f, 0.3f)]
 		[Tooltip("Vertical offset of the hands at full push, relative to resting position.")]
-		public float PushHeight = 0.10f;
+		public float PushHeight = 0.3f;
 
 		// ── Push timing ───────────────────────────────────────────────────
 		[Group("Push Timing")] [Units("s")] [Slider(0.0f, 2.0f)]
@@ -181,6 +189,14 @@ namespace Soccer
 		// while m_OrbitAngleValid; re-initialised fresh each time Walk begins.
 		[HideFromEditor] private float   m_OrbitAngle;
 		[HideFromEditor] private bool    m_OrbitAngleValid;
+		// Stuck detection (see StuckTimeout) - tracks the robot's own XZ
+		// position over time to notice when driving forward isn't actually
+		// producing movement, and m_Recovering switches Phase.Walk into
+		// "just turn to face the ball" mode when that happens.
+		[HideFromEditor] private Vector3 m_StuckRefPos;
+		[HideFromEditor] private float   m_StuckTimer;
+		[HideFromEditor] private bool    m_StuckRefPosValid;
+		[HideFromEditor] private bool    m_Recovering;
 
 		protected override void OnCreate()
 		{
@@ -207,6 +223,8 @@ namespace Soccer
 			m_Phase = TurnToFaceFirst ? Phase.FaceSettle : Phase.Walk;
 			m_PhaseElapsed = 0f;
 			m_OrbitAngleValid = false;
+			m_StuckRefPosValid = false;
+			m_Recovering = false;
 		}
 
 		protected override void OnUpdate(float ts)
@@ -258,6 +276,30 @@ namespace Soccer
 					Vector3 ball   = WalkTarget!.Transform.WorldTranslation;
 					Vector3 arriveTarget = GetMoveTargetPosition();
 
+					// Recovery: a prior stuck-detection (below) tripped, meaning the
+					// robot wasn't making progress - most likely wedged against
+					// geometry between it and an unreachable steering/approach point
+					// (e.g. the far-side approach point sitting behind a wall).
+					// Drop the curve-around steering entirely and just turn in place
+					// to face the ball, which is always a reachable direction, until
+					// roughly aligned - then hand back to normal walking.
+					if (m_Recovering)
+					{
+						float recoverErr = HeadingErrorTo(ball);
+						if (Mathf.Abs(recoverErr) <= FaceYawTolerance)
+						{
+							m_Recovering = false;
+							m_StuckRefPos = pelvis;
+							m_StuckTimer = 0f;
+						}
+						else
+						{
+							float recoverYawRate = Mathf.Clamp(recoverErr * YawGain, -MaxYawRate, MaxYawRate);
+							Drive(WalkerSlotId, 0f, recoverYawRate);
+							break;
+						}
+					}
+
 					Vector3 steerTarget;
 					float   arriveDistance;
 
@@ -303,11 +345,41 @@ namespace Soccer
 					if (distance > arriveDistance + ArriveTolerance)
 					{
 						Drive(WalkerSlotId, WalkSpeed, yawRate);
+
+						// Stuck detection: no meaningful XZ progress in StuckTimeout
+						// seconds despite driving forward. Trip recovery mode (handled
+						// at the top of this case) starting next frame.
+						if (!m_StuckRefPosValid)
+						{
+							m_StuckRefPos = pelvis;
+							m_StuckTimer = 0f;
+							m_StuckRefPosValid = true;
+						}
+						else
+						{
+							Vector3 moved = pelvis - m_StuckRefPos; moved.Y = 0f;
+							if (moved.Length() >= StuckMoveThreshold)
+							{
+								m_StuckRefPos = pelvis;
+								m_StuckTimer = 0f;
+							}
+							else
+							{
+								m_StuckTimer += ts;
+								if (m_StuckTimer >= StuckTimeout)
+								{
+									m_Recovering = true;
+									m_StuckTimer = 0f;
+								}
+							}
+						}
 					}
 					else
 					{
 						Drive(WalkerSlotId, 0f, 0f);
 						m_OrbitAngleValid = false;
+						m_StuckRefPosValid = false;
+						m_Recovering = false;
 						Advance(Phase.FaceGoalSettle);
 					}
 					break;
