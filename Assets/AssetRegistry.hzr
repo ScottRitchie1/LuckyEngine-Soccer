@@ -53,6 +53,9 @@ Assets:
   - Handle: 2438421924281239269
     FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_2_SM_Template_Map_Floor_Mujoco_Geom_AKSM8X6687M05SUMYZ4VVO5OY_SM_Template_Map_Floor_Mujoco_54905.obj
     Type: MeshSource
+  - Handle: 2527365211622438541
+    FilePath: Materials/BlueTeam.hmaterial
+    Type: Material
   - Handle: 2566423059652753465
     FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_0_SM_Template_Map_Floor_Geom_5G8106JNGWGV4KE7ASN9Q5ELP_SM_Template_Map_Floor_55729.obj
     Type: MeshSource
@@ -203,6 +206,9 @@ Assets:
   - Handle: 9371830055860878184
     FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/left_ankle_roll_link.STL
     Type: MeshSource
+  - Handle: 9486334613531098193
+    FilePath: Materials/RedTeam.hmaterial
+    Type: Material
   - Handle: 9515279380957170208
     FilePath: EnvMap/suburban_soccer_park_2k.hdr
     Type: EnvMap
@@ -308,6 +314,9 @@ Assets:
   - Handle: 14823698433773830604
     FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/right_wrist_yaw_link.STL
     Type: MeshSource
+  - Handle: 14892988842379099844
+    FilePath: Scripts/Intermediates/Debug/Soccer.sourcelink.json
+    Type: Motion
   - Handle: 14922222249555700408
     FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/pelvis.STL
     Type: MeshSource

@@ -1,7 +1,7 @@
 using System;
 using Hazel;
 
-namespace FlySwatter
+namespace Soccer
 {
 	// Combines the locomotion controller (turn-to-face + walk) with the
 	// two-handed push action: walks the G1 to WalkTarget, and once it arrives
@@ -22,11 +22,11 @@ namespace FlySwatter
 		// ── Locomotion ────────────────────────────────────────────────────
 		[Group("Locomotion")] [Units("m/s")] [Slider(0.0f, 1.5f)]
 		[Tooltip("Forward speed while travelling. The walker policy was trained around 0.5 m/s.")]
-		public float WalkSpeed = 0.632f;
+		public float WalkSpeed = 0.993f;
 
 		[Group("Locomotion")] [Units("m")] [Slider(0.0f, 2.0f)]
 		[Tooltip("Stop this far (XZ) from the target, then push.")]
-		public float StandDistance = 0.70f;
+		public float StandDistance = 1.002f;
 
 		[Group("Locomotion")] [Units("m")] [Slider(0.0f, 0.5f)]
 		[Tooltip("Distance dead-zone around StandDistance - prevents creeping/oscillation at arrival.")]
@@ -231,7 +231,7 @@ namespace FlySwatter
 
 				case Phase.Walk:
 				{
-					Vector3 pelvis = m_Mujoco.GetPosition(m_PelvisBodyId);
+					Vector3 pelvis = GetPelvisWorldPosition();
 					Vector3 target = WalkTarget.Transform.WorldTranslation;
 					float dx = target.X - pelvis.X;
 					float dz = target.Z - pelvis.Z;
@@ -369,19 +369,39 @@ namespace FlySwatter
 		{
 			if (WalkTarget == null)
 				return 0f;
-			Vector3 pelvis = m_Mujoco!.GetPosition(m_PelvisBodyId);
+			Vector3 pelvis = GetPelvisWorldPosition();
 			Vector3 target = WalkTarget.Transform.WorldTranslation;
 			float dx = target.X - pelvis.X;
 			float dz = target.Z - pelvis.Z;
 			return Mathf.WrapToPi(Mathf.Atan2(-dz, dx) - GetPelvisYaw());
 		}
 
+		// MuJoCo positions/orientations for this robot are expressed in the
+		// simulation's own local frame, which is anchored wherever the physics
+		// scene starts (effectively this entity's spawn transform) - NOT at
+		// the engine's world origin. WalkTarget, being a normal scene entity,
+		// is expressed in world space. Comparing the two directly (as the
+		// original code did) only happened to work when this entity's
+		// Transform was identity (position 0,0,0, no rotation); moving the
+		// robot off-centre broke the walk/heading math. These two helpers
+		// rotate + translate the MuJoCo-local pelvis pose into world space so
+		// it can be safely compared against WalkTarget.Transform.
+		private Vector3 GetPelvisWorldPosition()
+		{
+			if (m_Mujoco == null || m_PelvisBodyId == uint.MaxValue)
+				return Transform.WorldTranslation;
+			Vector3 local = m_Mujoco.GetPosition(m_PelvisBodyId);
+			return Transform.WorldTranslation + new Quaternion(Transform.WorldRotation) * local;
+		}
+
 		// G1 pelvis heading: local +X is forward. yaw = atan2(-fwd.Z, fwd.X).
+		// Also rotated into world space (see GetPelvisWorldPosition) so it can
+		// be compared against the world-space bearing to WalkTarget.
 		private float GetPelvisYaw()
 		{
 			if (m_Mujoco == null || m_PelvisBodyId == uint.MaxValue)
 				return 0f;
-			Quaternion q = m_Mujoco.GetOrientation(m_PelvisBodyId);
+			Quaternion q = new Quaternion(Transform.WorldRotation) * m_Mujoco.GetOrientation(m_PelvisBodyId);
 			Vector3 fwd = q * new Vector3(1f, 0f, 0f);
 			return Mathf.Atan2(-fwd.Z, fwd.X);
 		}

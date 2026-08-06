@@ -161,10 +161,10 @@ SceneSettings:
       []
   EditorCamera:
     Position: [-5.03723, 4.92619, 5.03577]
-    FocalPoint: [0, 0, 0]
+    FocalPoint: [-0.0942373, 0.0428195, -0.133316]
     Distance: 8.66025
-    Pitch: 0.60508
-    Yaw: 0.785543
+    Pitch: 0.59908
+    Yaw: 0.763043
   RendererSettings:
     Shadows:
       CascadeNearPlaneOffset: 0
@@ -915,7 +915,7 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [-2.53586, 0.525301, -2.32507]
+      Position: [-2.53005, 0.873147, -2.32507]
       Rotation: [0, 0, 0]
       Scale: [1, 1, 1]
     StaticMeshComponent:
@@ -923,6 +923,24 @@ Entities:
       MaterialTable:
         0: 0
       Visible: true
+    MujocoSphereColliderComponent:
+      Density: 1
+      Radius: 0.5
+      Friction: [1, 0.1, 0.01]
+      Contype: 1
+      Conaffinity: 1
+      Condim: -1
+    MujocoJointComponent:
+      Type: "\x00"
+      Position: [0, 0, 0]
+      Axis: [0, 1, 0]
+      Limited: false
+      LimitMin: -3.14159
+      LimitMax: 3.14159
+      Stiffness: 0
+      Damping: 1
+      Armature: 0.1
+      JointId: -1
   - Entity: 9153740723464039865
     Domain: Client
     TagComponent:
@@ -1497,66 +1515,106 @@ Entities:
       Rotation: [0, 0, 0]
       Scale: [1, 1, 1]
     ScriptComponent:
-      ScriptID: 3976844100
-      ScriptName: FlySwatter.G1WalkForward
+      ScriptID: 3800144728
+      ScriptName: FlySwatter.G1WalkThenPush
       Fields:
-        - ID: 427634486
+        - ID: 4273495338
           Name: WalkTarget
           Type: Entity
-          Value: 9070304970153756617
-        - ID: 3446589982
+          Value: 0
+        - ID: 3095821634
           Name: WalkSpeed
           Type: Float
-          Value: 0.5
-        - ID: 3750035939
+          Value: 0.632
+        - ID: 823672439
           Name: StandDistance
           Type: Float
-          Value: 0.26
-        - ID: 1327949708
+          Value: 0.7
+        - ID: 3540872536
           Name: ArriveTolerance
           Type: Float
           Value: 0.1
-        - ID: 2425820726
+        - ID: 4014988506
           Name: YawGain
           Type: Float
           Value: 2
-        - ID: 4039012155
+        - ID: 3403887567
           Name: MaxYawRate
           Type: Float
           Value: 1
-        - ID: 2319999307
+        - ID: 661539247
           Name: TurnToFaceFirst
           Type: Bool
           Value: true
-        - ID: 2638833322
+        - ID: 2686694438
           Name: RotatorSlotId
           Type: UInt
           Value: 2
-        - ID: 721470447
+        - ID: 3846856747
           Name: FaceYawTolerance
           Type: Float
           Value: 0.12
-        - ID: 1994458233
+        - ID: 2043969213
           Name: PreTurnSettle
           Type: Float
           Value: 0.4
-        - ID: 448644774
+        - ID: 2762122962
           Name: TurnRampIn
           Type: Float
-          Value: 0.131
-        - ID: 2816064166
+          Value: 0.5
+        - ID: 876736066
           Name: FaceTimeout
           Type: Float
           Value: 8
-        - ID: 285285669
+        - ID: 3544820905
           Name: WalkerFallbackTurnVx
           Type: Float
-          Value: 0.18
-        - ID: 3154486623
+          Value: 0.091
+        - ID: 3159793903
+          Name: WindupPullBack
+          Type: Float
+          Value: 0.1
+        - ID: 2762567884
+          Name: WindupLift
+          Type: Float
+          Value: 0.15
+        - ID: 4157967051
+          Name: PushReach
+          Type: Float
+          Value: 0.5
+        - ID: 1329162803
+          Name: PushHeight
+          Type: Float
+          Value: 0.1
+        - ID: 2288349392
+          Name: HoldBeforePush
+          Type: Float
+          Value: 0.5
+        - ID: 162688479
+          Name: WindupDuration
+          Type: Float
+          Value: 0.4
+        - ID: 2586334890
+          Name: PushDuration
+          Type: Float
+          Value: 0.3
+        - ID: 4181384737
+          Name: RetractDuration
+          Type: Float
+          Value: 0.4
+        - ID: 3539199440
+          Name: Loop
+          Type: Bool
+          Value: false
+        - ID: 2286501323
+          Name: LoopInterval
+          Type: Float
+          Value: 1.5
+        - ID: 641503547
           Name: WalkerSlotId
           Type: UInt
           Value: 1
-        - ID: 2593157144
+        - ID: 94703452
           Name: PelvisBodyName
           Type: String
           Value: pelvis
