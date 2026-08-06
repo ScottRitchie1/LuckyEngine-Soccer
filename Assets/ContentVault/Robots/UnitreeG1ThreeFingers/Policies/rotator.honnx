@@ -1,0 +1,1 @@
+{"schema": "honnx_manifest", "onnx": "rotator.onnx", "model_config": "model_config.json"}

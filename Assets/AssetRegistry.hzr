@@ -1,0 +1,379 @@
+Assets:
+  - Handle: 322562212486307370
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_2_SM_Template_Map_Floor_Mujoco_Geom_AKSM8X6687M05SUMYZ4VVO5OY_SM_Template_Map_Floor_Mujoco_82367.obj
+    Type: MeshSource
+  - Handle: 322911282174702297
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_2_SM_Template_Map_Floor_Mujoco_Geom_AKSM8X6687M05SUMYZ4VVO5OY_SM_Template_Map_Floor_Mujoco_54891.obj
+    Type: MeshSource
+  - Handle: 609194238740981540
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_0_SM_Template_Map_Floor_Geom_5G8106JNGWGV4KE7ASN9Q5ELP_SM_Template_Map_Floor_55952.obj
+    Type: MeshSource
+  - Handle: 643418889505494574
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_0_SM_Template_Map_Floor_Geom_5G8106JNGWGV4KE7ASN9Q5ELP_SM_Template_Map_Floor_55672.obj
+    Type: MeshSource
+  - Handle: 715616265805117615
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/left_wrist_yaw_link.STL
+    Type: MeshSource
+  - Handle: 798475466255991807
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_0_SM_Template_Map_Floor_Geom_5G8106JNGWGV4KE7ASN9Q5ELP_SM_Template_Map_Floor_55817.obj
+    Type: MeshSource
+  - Handle: 843985119047603892
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/right_wrist_pitch_link.STL
+    Type: MeshSource
+  - Handle: 977418963734954575
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_0_SM_Template_Map_Floor_Geom_5G8106JNGWGV4KE7ASN9Q5ELP_SM_Template_Map_Floor_55902.obj
+    Type: MeshSource
+  - Handle: 1372876565578396705
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/left_hand_middle_0_link.STL
+    Type: MeshSource
+  - Handle: 1436372508822696629
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_2_SM_Template_Map_Floor_Mujoco_Geom_AKSM8X6687M05SUMYZ4VVO5OY_SM_Template_Map_Floor_Mujoco_54893.obj
+    Type: MeshSource
+  - Handle: 1597442156093994713
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/right_hand_middle_0_link.STL
+    Type: MeshSource
+  - Handle: 1609717670842339009
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_2_SM_Template_Map_Floor_Mujoco_Geom_AKSM8X6687M05SUMYZ4VVO5OY_SM_Template_Map_Floor_Mujoco_83294.obj
+    Type: MeshSource
+  - Handle: 1642168468731245367
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_0_SM_Template_Map_Floor_Geom_5G8106JNGWGV4KE7ASN9Q5ELP_SM_Template_Map_Floor_55872.obj
+    Type: MeshSource
+  - Handle: 1674123491303726688
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/left_hip_pitch_link.STL
+    Type: MeshSource
+  - Handle: 1840554261071311362
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/Policies/policy_descriptor.walker.json
+    Type: Motion
+  - Handle: 1884025942848699728
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/right_shoulder_yaw_link.STL
+    Type: MeshSource
+  - Handle: 2074956870295404726
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/left_shoulder_pitch_link.STL
+    Type: MeshSource
+  - Handle: 2438421924281239269
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_2_SM_Template_Map_Floor_Mujoco_Geom_AKSM8X6687M05SUMYZ4VVO5OY_SM_Template_Map_Floor_Mujoco_54905.obj
+    Type: MeshSource
+  - Handle: 2566423059652753465
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_0_SM_Template_Map_Floor_Geom_5G8106JNGWGV4KE7ASN9Q5ELP_SM_Template_Map_Floor_55729.obj
+    Type: MeshSource
+  - Handle: 2726119102026578132
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/left_hand_thumb_0_link.STL
+    Type: MeshSource
+  - Handle: 2758189903740913290
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/Policies/walker_Policy.cs
+    Type: ScriptFile
+  - Handle: 2897237801928330747
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/right_hand_index_1_link.STL
+    Type: MeshSource
+  - Handle: 2971271590063447834
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/right_hip_roll_link.STL
+    Type: MeshSource
+  - Handle: 3219680105078845712
+    FilePath: Scripts/Source/Generated/RotatorCommands.cs
+    Type: ScriptFile
+  - Handle: 3381797389783086384
+    FilePath: Scripts/Client/obj/Soccer.csproj.nuget.dgspec.json
+    Type: Motion
+  - Handle: 3517740315478852090
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/right_hand_index_0_link.STL
+    Type: MeshSource
+  - Handle: 3631657783894698893
+    FilePath: Scripts/Client/Source/G1Push.cs
+    Type: ScriptFile
+  - Handle: 3733617714893260144
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/Policies/rotator.honnx
+    Type: OnnxPolicy
+  - Handle: 3773850486181811567
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_0_SM_Template_Map_Floor_Geom_5G8106JNGWGV4KE7ASN9Q5ELP_SM_Template_Map_Floor_55875.obj
+    Type: MeshSource
+  - Handle: 3824142871854221475
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_0_SM_Template_Map_Floor_Geom_5G8106JNGWGV4KE7ASN9Q5ELP_SM_Template_Map_Floor_55904.obj
+    Type: MeshSource
+  - Handle: 3897947958224520598
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_2_SM_Template_Map_Floor_Mujoco_Geom_AKSM8X6687M05SUMYZ4VVO5OY_SM_Template_Map_Floor_Mujoco_84862.obj
+    Type: MeshSource
+  - Handle: 4008278167428657961
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/right_knee_link.STL
+    Type: MeshSource
+  - Handle: 4026073875951333361
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/right_ankle_pitch_link.STL
+    Type: MeshSource
+  - Handle: 4091766103944361284
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_1_floor_Mujoco_Geom_9PF504YOILC6HJDCX9E6MVLVU_floor_Mujoco_77180.obj
+    Type: MeshSource
+  - Handle: 4169564381720294245
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_2_SM_Template_Map_Floor_Mujoco_Geom_AKSM8X6687M05SUMYZ4VVO5OY_SM_Template_Map_Floor_Mujoco_83310.obj
+    Type: MeshSource
+  - Handle: 4241663774595030205
+    FilePath: Meshes/Default/Cube.hsmesh
+    Type: StaticMesh
+  - Handle: 4426105543866709249
+    FilePath: Scripts/Binaries/Soccer.deps.json
+    Type: Motion
+  - Handle: 4526501986481953555
+    FilePath: Scripts/Source/Generated/WalkerCommands.cs
+    Type: ScriptFile
+  - Handle: 4535588668053175709
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/left_hand_palm_link.STL
+    Type: MeshSource
+  - Handle: 4550222422009441005
+    FilePath: Meshes/Default/Source/Cube.gltf
+    Type: MeshSource
+  - Handle: 4949858365324918783
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/right_hip_yaw_link.STL
+    Type: MeshSource
+  - Handle: 5712451343787241409
+    FilePath: Materials/Default/GroundMaterial.hmaterial
+    Type: Material
+  - Handle: 5841289876762156163
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/left_hand_thumb_1_link.STL
+    Type: MeshSource
+  - Handle: 6022401658311820817
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_1_floor_Mujoco_Geom_9PF504YOILC6HJDCX9E6MVLVU_floor_Mujoco_54916.obj
+    Type: MeshSource
+  - Handle: 6265284091203767963
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_0_SM_Template_Map_Floor_Geom_5G8106JNGWGV4KE7ASN9Q5ELP_SM_Template_Map_Floor_55818.obj
+    Type: MeshSource
+  - Handle: 6399295909360470122
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_0_SM_Template_Map_Floor_Geom_5G8106JNGWGV4KE7ASN9Q5ELP_SM_Template_Map_Floor_55674.obj
+    Type: MeshSource
+  - Handle: 6535749077110135626
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_0_LuckyCube_Geom_3O1HU3SB22CU6908KGVYEU3E4_LuckyCube_78525.obj
+    Type: MeshSource
+  - Handle: 7044391783201406588
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_0_SM_Template_Map_Floor_Geom_5G8106JNGWGV4KE7ASN9Q5ELP_SM_Template_Map_Floor_55867.obj
+    Type: MeshSource
+  - Handle: 7423077834676757802
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/waist_roll_link_rev_1_0.STL
+    Type: MeshSource
+  - Handle: 7490042376963252271
+    FilePath: Meshes/Default/Source/Cylinder.gltf
+    Type: MeshSource
+  - Handle: 7492343468076437118
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/left_knee_link.STL
+    Type: MeshSource
+  - Handle: 7576818286956712137
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_1_floor_Mujoco_Geom_9PF504YOILC6HJDCX9E6MVLVU_floor_Mujoco_54913.obj
+    Type: MeshSource
+  - Handle: 8049650287434066538
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/left_shoulder_yaw_link.STL
+    Type: MeshSource
+  - Handle: 8061456442116465881
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/MG_UnitreeG1ThreeFingers.hmograph
+    Type: MotionGraph
+  - Handle: 8081499440683993017
+    FilePath: Meshes/Default/Source/Cone.gltf
+    Type: MeshSource
+  - Handle: 8119967875576342301
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/right_shoulder_pitch_link.STL
+    Type: MeshSource
+  - Handle: 8183179567688601400
+    FilePath: Scripts/Intermediates/Debug/.NETCoreApp,Version=v9.0.AssemblyAttributes.cs
+    Type: ScriptFile
+  - Handle: 8596571937149259943
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/Policies/rotator.onnx
+    Type: OnnxModel
+  - Handle: 8698339089102947370
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_1_floor_Mujoco_Geom_9PF504YOILC6HJDCX9E6MVLVU_floor_Mujoco_54914.obj
+    Type: MeshSource
+  - Handle: 8737966178722056111
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/left_ankle_pitch_link.STL
+    Type: MeshSource
+  - Handle: 8864143694122287969
+    FilePath: Scripts/Intermediates/Debug/Soccer.AssemblyInfo.cs
+    Type: ScriptFile
+  - Handle: 8933059024588085631
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_0_SM_Template_Map_Floor_Geom_5G8106JNGWGV4KE7ASN9Q5ELP_SM_Template_Map_Floor_55903.obj
+    Type: MeshSource
+  - Handle: 9127283731449223950
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/right_hand_middle_1_link.STL
+    Type: MeshSource
+  - Handle: 9238766384778728586
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_2_SM_Template_Map_Floor_Mujoco_Geom_AKSM8X6687M05SUMYZ4VVO5OY_SM_Template_Map_Floor_Mujoco_54889.obj
+    Type: MeshSource
+  - Handle: 9252284211966947450
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_2_SM_Template_Map_Floor_Mujoco_Geom_AKSM8X6687M05SUMYZ4VVO5OY_SM_Template_Map_Floor_Mujoco_54900.obj
+    Type: MeshSource
+  - Handle: 9302204804099390193
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/left_elbow_link.STL
+    Type: MeshSource
+  - Handle: 9336900234756892610
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/Policies/walker.honnx
+    Type: OnnxPolicy
+  - Handle: 9371830055860878184
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/left_ankle_roll_link.STL
+    Type: MeshSource
+  - Handle: 9515279380957170208
+    FilePath: EnvMap/suburban_soccer_park_2k.hdr
+    Type: EnvMap
+  - Handle: 9900834262803557477
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/right_hand_thumb_1_link.STL
+    Type: MeshSource
+  - Handle: 9960609783167456810
+    FilePath: Scenes/Main.hscene
+    Type: Scene
+  - Handle: 10192122921329832982
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_0_SM_Template_Map_Floor_Geom_5G8106JNGWGV4KE7ASN9Q5ELP_SM_Template_Map_Floor_55905.obj
+    Type: MeshSource
+  - Handle: 10299169103136257335
+    FilePath: Meshes/Default/Source/Octahedron.glb
+    Type: MeshSource
+  - Handle: 10407689879994103875
+    FilePath: Scripts/Client/obj/project.assets.json
+    Type: Motion
+  - Handle: 10448634398002297627
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_0_SM_Template_Map_Floor_Geom_5G8106JNGWGV4KE7ASN9Q5ELP_SM_Template_Map_Floor_55868.obj
+    Type: MeshSource
+  - Handle: 10577696176570291058
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/right_ankle_roll_link.STL
+    Type: MeshSource
+  - Handle: 10759091747979573297
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/Policies/policy_descriptor.rotator.json
+    Type: Motion
+  - Handle: 10788707727481907501
+    FilePath: Scripts/Client/Source/G1WalkForward.cs
+    Type: ScriptFile
+  - Handle: 10915495051698433608
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/right_hip_pitch_link.STL
+    Type: MeshSource
+  - Handle: 10984993241399903114
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_0_SM_Template_Map_Floor_Geom_5G8106JNGWGV4KE7ASN9Q5ELP_SM_Template_Map_Floor_55852.obj
+    Type: MeshSource
+  - Handle: 11015678680102818066
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_0_SM_Template_Map_Floor_Geom_5G8106JNGWGV4KE7ASN9Q5ELP_SM_Template_Map_Floor_55873.obj
+    Type: MeshSource
+  - Handle: 11156348855201859009
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/head_link.STL
+    Type: MeshSource
+  - Handle: 11683108460147402508
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_0_SM_Template_Map_Floor_Geom_5G8106JNGWGV4KE7ASN9Q5ELP_SM_Template_Map_Floor_55676.obj
+    Type: MeshSource
+  - Handle: 11779010207030438459
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_0_SM_Template_Map_Floor_Geom_5G8106JNGWGV4KE7ASN9Q5ELP_SM_Template_Map_Floor_55871.obj
+    Type: MeshSource
+  - Handle: 11847060724901974130
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/left_hand_middle_1_link.STL
+    Type: MeshSource
+  - Handle: 12015501368039689386
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/Policies/walker.onnx
+    Type: OnnxModel
+  - Handle: 12055030448885285695
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/pelvis_contour_link.STL
+    Type: MeshSource
+  - Handle: 12108856506996324323
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/left_hip_yaw_link.STL
+    Type: MeshSource
+  - Handle: 12147177589456280373
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_2_SM_Template_Map_Floor_Mujoco_Geom_AKSM8X6687M05SUMYZ4VVO5OY_SM_Template_Map_Floor_Mujoco_83288.obj
+    Type: MeshSource
+  - Handle: 12267158834155342773
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_0_SM_Template_Map_Floor_Geom_5G8106JNGWGV4KE7ASN9Q5ELP_SM_Template_Map_Floor_55874.obj
+    Type: MeshSource
+  - Handle: 12378787818741788584
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/left_wrist_roll_link.STL
+    Type: MeshSource
+  - Handle: 12533348633626904688
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/right_hand_thumb_0_link.STL
+    Type: MeshSource
+  - Handle: 12772981509664864346
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/g1_three_fingers.xml
+    Type: MujocoScene
+  - Handle: 13272923416350764492
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_1_floor_Mujoco_Geom_9PF504YOILC6HJDCX9E6MVLVU_floor_Mujoco_77182.obj
+    Type: MeshSource
+  - Handle: 13452911905905718915
+    FilePath: Scripts/Binaries/Soccer.runtimeconfig.json
+    Type: Motion
+  - Handle: 13822672721560539089
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_2_SM_Template_Map_Floor_Mujoco_Geom_AKSM8X6687M05SUMYZ4VVO5OY_SM_Template_Map_Floor_Mujoco_54740.obj
+    Type: MeshSource
+  - Handle: 14295706688819871227
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/left_hand_index_1_link.STL
+    Type: MeshSource
+  - Handle: 14322375221577413482
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_2_SM_Template_Map_Floor_Mujoco_Geom_AKSM8X6687M05SUMYZ4VVO5OY_SM_Template_Map_Floor_Mujoco_54820.obj
+    Type: MeshSource
+  - Handle: 14351923620043579605
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/right_hand_thumb_2_link.STL
+    Type: MeshSource
+  - Handle: 14459219317592830362
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/left_hip_roll_link.STL
+    Type: MeshSource
+  - Handle: 14743383982549149309
+    FilePath: Scripts/Client/Source/G1WalkThenPush.cs
+    Type: ScriptFile
+  - Handle: 14792177238328196799
+    FilePath: Scripts/Client/Source/G1Kick.cs
+    Type: ScriptFile
+  - Handle: 14823698433773830604
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/right_wrist_yaw_link.STL
+    Type: MeshSource
+  - Handle: 14922222249555700408
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/pelvis.STL
+    Type: MeshSource
+  - Handle: 14956574617453564460
+    FilePath: Meshes/Default/Sphere.hsmesh
+    Type: StaticMesh
+  - Handle: 14966123402118234428
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/Policies/model_config.json
+    Type: Motion
+  - Handle: 15042418940191671647
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/logo_link.STL
+    Type: MeshSource
+  - Handle: 15569912663502222577
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/left_wrist_pitch_link.STL
+    Type: MeshSource
+  - Handle: 15570919943781239070
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/left_hand_thumb_2_link.STL
+    Type: MeshSource
+  - Handle: 15634621762172173117
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/waist_yaw_link_rev_1_0.STL
+    Type: MeshSource
+  - Handle: 15700454691438212790
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_2_SM_Template_Map_Floor_Mujoco_Geom_AKSM8X6687M05SUMYZ4VVO5OY_SM_Template_Map_Floor_Mujoco_83278.obj
+    Type: MeshSource
+  - Handle: 15733863096781522824
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_0_SM_Template_Map_Floor_Geom_5G8106JNGWGV4KE7ASN9Q5ELP_SM_Template_Map_Floor_55870.obj
+    Type: MeshSource
+  - Handle: 15989316657234040474
+    FilePath: Meshes/Default/Source/Plane.gltf
+    Type: MeshSource
+  - Handle: 16016645115619946106
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/left_shoulder_roll_link.STL
+    Type: MeshSource
+  - Handle: 16032226600882484488
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/right_shoulder_roll_link.STL
+    Type: MeshSource
+  - Handle: 16198810575644426480
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/left_hand_index_0_link.STL
+    Type: MeshSource
+  - Handle: 16424454853826318748
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/right_elbow_link.STL
+    Type: MeshSource
+  - Handle: 16431367788027169726
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/right_hand_palm_link.STL
+    Type: MeshSource
+  - Handle: 16538005695876238319
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/g1_three_fingers.png
+    Type: Texture
+  - Handle: 16698136933972239235
+    FilePath: Meshes/Default/Source/Torus.gltf
+    Type: MeshSource
+  - Handle: 17000491882969894787
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/torso_link_rev_1_0.STL
+    Type: MeshSource
+  - Handle: 17037578520952511619
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/right_wrist_roll_link.STL
+    Type: MeshSource
+  - Handle: 17200461718002673692
+    FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_0_SM_Template_Map_Floor_Geom_5G8106JNGWGV4KE7ASN9Q5ELP_SM_Template_Map_Floor_55820.obj
+    Type: MeshSource
+  - Handle: 17374801328266119523
+    FilePath: Meshes/Default/Source/Sphere.gltf
+    Type: MeshSource
+  - Handle: 17462475252288129742
+    FilePath: Scripts/Source/Generated/MainPolicyIds.cs
+    Type: ScriptFile
+  - Handle: 18130808224356694619
+    FilePath: Meshes/Default/Source/Capsule.gltf
+    Type: MeshSource

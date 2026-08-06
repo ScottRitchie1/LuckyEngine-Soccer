@@ -1,0 +1,182 @@
+Project:
+  Name: Soccer
+  Version: ""
+  AssetDirectory: Assets
+  AssetRegistry: Assets/AssetRegistry.hzr
+  AudioCommandsRegistryPath: Assets/AudioCommandsRegistry.hzr
+  MeshPath: Assets/Meshes
+  MeshSourcePath: Assets/Meshes/Source
+  AnimationPath: Assets/Animation
+  ScriptClientProjectPath: Assets/Scripts/Client
+  ScriptServerProjectPath: Assets/Scripts/Server
+  ScriptModulePath: Assets/Scripts/Binaries
+  DefaultNamespace: Soccer
+  ScriptAssemblyName: Soccer
+  StartScene: Scenes/Main.hscene
+  AutomaticallyReloadAssembly: true
+  AutoSave: true
+  AutoSaveInterval: 60
+  Audio:
+    FileStreamingDurationThreshold: 30
+  Physics:
+    FixedTimestep: 0.00999999978
+    Gravity: [0, -9.81000042, 0]
+    SolverPositionIterations: 8
+    SolverVelocityIterations: 2
+    MaxBodies: 1000
+    CaptureOnPlay: true
+    CaptureMethod: 1
+  Log:
+    Agent:
+      Enabled: true
+      LevelFilter: Info
+    AgentClient:
+      Enabled: true
+      LevelFilter: Trace
+    Animation:
+      Enabled: true
+      LevelFilter: Warn
+    Asset Pack:
+      Enabled: true
+      LevelFilter: Warn
+    AssetManager:
+      Enabled: true
+      LevelFilter: Info
+    AssetSystem:
+      Enabled: true
+      LevelFilter: Info
+    Assimp:
+      Enabled: true
+      LevelFilter: Error
+    Audio:
+      Enabled: true
+      LevelFilter: Error
+    Auth:
+      Enabled: true
+      LevelFilter: Trace
+    CORE:
+      Enabled: true
+      LevelFilter: Trace
+    CameraRecorder:
+      Enabled: true
+      LevelFilter: Trace
+    ContentVault:
+      Enabled: true
+      LevelFilter: Trace
+    Core:
+      Enabled: true
+      LevelFilter: Trace
+    Crash:
+      Enabled: true
+      LevelFilter: Trace
+    Data:
+      Enabled: true
+      LevelFilter: Trace
+    Decomposition:
+      Enabled: true
+      LevelFilter: Trace
+    EditorLayer:
+      Enabled: true
+      LevelFilter: Info
+    EpiIK:
+      Enabled: true
+      LevelFilter: Trace
+    EpiPolicy:
+      Enabled: true
+      LevelFilter: Trace
+    EpiScene:
+      Enabled: true
+      LevelFilter: Trace
+    EpiSession:
+      Enabled: true
+      LevelFilter: Trace
+    EpiStall:
+      Enabled: true
+      LevelFilter: Trace
+    EpiStep:
+      Enabled: true
+      LevelFilter: Trace
+    EpiTrace:
+      Enabled: true
+      LevelFilter: Trace
+    FFmpegWriter:
+      Enabled: true
+      LevelFilter: Trace
+    GLFW:
+      Enabled: true
+      LevelFilter: Error
+    Hub:
+      Enabled: true
+      LevelFilter: Trace
+    Memory:
+      Enabled: true
+      LevelFilter: Error
+    Mesh:
+      Enabled: true
+      LevelFilter: Warn
+    Motion:
+      Enabled: true
+      LevelFilter: Trace
+    Mujoco:
+      Enabled: true
+      LevelFilter: Trace
+    Ned:
+      Enabled: true
+      LevelFilter: Info
+    Observer:
+      Enabled: true
+      LevelFilter: Trace
+    ParquetWriter:
+      Enabled: true
+      LevelFilter: Trace
+    Physics:
+      Enabled: true
+      LevelFilter: Info
+    Platform:
+      Enabled: true
+      LevelFilter: Trace
+    Policy:
+      Enabled: true
+      LevelFilter: Trace
+    Preparing:
+      Enabled: true
+      LevelFilter: Trace
+    ProcessHelper:
+      Enabled: true
+      LevelFilter: Trace
+    Project:
+      Enabled: true
+      LevelFilter: Warn
+    RecLog:
+      Enabled: true
+      LevelFilter: Trace
+    Renderer:
+      Enabled: true
+      LevelFilter: Warn
+    Scene:
+      Enabled: true
+      LevelFilter: Info
+    SceneSerializer:
+      Enabled: true
+      LevelFilter: Trace
+    ScriptBuilder:
+      Enabled: true
+      LevelFilter: Trace
+    ScriptStorage:
+      Enabled: true
+      LevelFilter: Error
+    Scripting:
+      Enabled: true
+      LevelFilter: Warn
+    Sound Spatializer:
+      Enabled: true
+      LevelFilter: Warn
+    Sync:
+      Enabled: true
+      LevelFilter: Trace
+    Timer:
+      Enabled: false
+      LevelFilter: Trace
+    miniaudio:
+      Enabled: true
+      LevelFilter: Error
