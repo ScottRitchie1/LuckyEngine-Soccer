@@ -77,9 +77,6 @@ Assets:
   - Handle: 3219680105078845712
     FilePath: Scripts/Source/Generated/RotatorCommands.cs
     Type: ScriptFile
-  - Handle: 3381797389783086384
-    FilePath: Scripts/Client/obj/Soccer.csproj.nuget.dgspec.json
-    Type: Motion
   - Handle: 3517740315478852090
     FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/right_hand_index_0_link.STL
     Type: MeshSource
@@ -230,9 +227,6 @@ Assets:
   - Handle: 10299169103136257335
     FilePath: Meshes/Default/Source/Octahedron.glb
     Type: MeshSource
-  - Handle: 10407689879994103875
-    FilePath: Scripts/Client/obj/project.assets.json
-    Type: Motion
   - Handle: 10448634398002297627
     FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_0_SM_Template_Map_Floor_Geom_5G8106JNGWGV4KE7ASN9Q5ELP_SM_Template_Map_Floor_55868.obj
     Type: MeshSource
