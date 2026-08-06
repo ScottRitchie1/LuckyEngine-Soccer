@@ -4,6 +4,7 @@ Intermediates/
 Cache/
 DataSessions/
 Layouts/
+AgentLogs/
 
 # Autosave shadows (editor writes *.auto next to source-of-truth files)
 *.hscene.auto
