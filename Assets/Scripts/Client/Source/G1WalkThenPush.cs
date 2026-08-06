@@ -380,12 +380,14 @@ namespace Soccer
 		// simulation's own local frame, which is anchored wherever the physics
 		// scene starts (effectively this entity's spawn transform) - NOT at
 		// the engine's world origin. WalkTarget, being a normal scene entity,
-		// is expressed in world space. Comparing the two directly (as the
+		// is expressed in world space, and the arm IK targets sent to
+		// RobotControllerComponent also turn out to be consumed in world
+		// space. Comparing/sending MuJoCo-local values directly (as the
 		// original code did) only happened to work when this entity's
 		// Transform was identity (position 0,0,0, no rotation); moving the
-		// robot off-centre broke the walk/heading math. These two helpers
-		// rotate + translate the MuJoCo-local pelvis pose into world space so
-		// it can be safely compared against WalkTarget.Transform.
+		// robot off-centre broke both the walk/heading math and the arm
+		// targets. These helpers rotate + translate MuJoCo-local pelvis pose
+		// into world space so it can be safely compared/sent as world-space.
 		private Vector3 GetPelvisWorldPosition()
 		{
 			if (m_Mujoco == null || m_PelvisBodyId == uint.MaxValue)
@@ -394,46 +396,49 @@ namespace Soccer
 			return Transform.WorldTranslation + new Quaternion(Transform.WorldRotation) * local;
 		}
 
+		private Quaternion GetPelvisWorldOrientation()
+		{
+			if (m_Mujoco == null || m_PelvisBodyId == uint.MaxValue)
+				return new Quaternion(Transform.WorldRotation);
+			return new Quaternion(Transform.WorldRotation) * m_Mujoco.GetOrientation(m_PelvisBodyId);
+		}
+
 		// G1 pelvis heading: local +X is forward. yaw = atan2(-fwd.Z, fwd.X).
-		// Also rotated into world space (see GetPelvisWorldPosition) so it can
+		// Rotated into world space (see GetPelvisWorldOrientation) so it can
 		// be compared against the world-space bearing to WalkTarget.
 		private float GetPelvisYaw()
 		{
 			if (m_Mujoco == null || m_PelvisBodyId == uint.MaxValue)
 				return 0f;
-			Quaternion q = new Quaternion(Transform.WorldRotation) * m_Mujoco.GetOrientation(m_PelvisBodyId);
-			Vector3 fwd = q * new Vector3(1f, 0f, 0f);
+			Vector3 fwd = GetPelvisWorldOrientation() * new Vector3(1f, 0f, 0f);
 			return Mathf.Atan2(-fwd.Z, fwd.X);
 		}
 
-		// Returns a unit horizontal forward vector (local +X rotated by pelvis yaw).
+		// Returns a unit horizontal forward vector (world +X rotated by
+		// pelvis yaw), used to offset the arm targets during windup/push.
 		private Vector3 GetPelvisForward()
 		{
 			if (m_Mujoco == null || m_PelvisBodyId == uint.MaxValue)
-				return new Vector3(1f, 0f, 0f);
-			Quaternion q = m_Mujoco.GetOrientation(m_PelvisBodyId);
-			Vector3 fwd = q * new Vector3(1f, 0f, 0f);
+				return new Quaternion(Transform.WorldRotation) * new Vector3(1f, 0f, 0f);
+			Vector3 fwd = GetPelvisWorldOrientation() * new Vector3(1f, 0f, 0f);
 			fwd.Y = 0f;
 			float len = fwd.Length();
 			return len > 1e-5f ? fwd / len : new Vector3(1f, 0f, 0f);
 		}
 
-		// Re-derives the resting hand world positions from the pelvis-local
-		// offsets captured at OnCreate, against the pelvis's CURRENT pose.
-		// Must be called fresh at each push phase transition (not cached),
-		// since the robot may have walked/turned since the last push.
+		// Re-derives the resting hand WORLD positions from the pelvis-local
+		// offsets captured at OnCreate, against the pelvis's CURRENT world
+		// pose (position + orientation, both converted from MuJoCo-local via
+		// this entity's Transform). Must be called fresh at each push phase
+		// transition (not cached), since the robot may have walked/turned
+		// since the last push - and these feed straight into
+		// RobotControllerComponent's world-space arm IK targets.
 		private void GetHomeHandWorldPositions(out Vector3 homeLeft, out Vector3 homeRight)
 		{
-			if (m_Mujoco == null || m_PelvisBodyId == uint.MaxValue)
-			{
-				homeLeft = m_HomeLeftLocalOffset;
-				homeRight = m_HomeRightLocalOffset;
-				return;
-			}
-			Vector3 pelvisPos = m_Mujoco.GetPosition(m_PelvisBodyId);
-			Quaternion pelvisRot = m_Mujoco.GetOrientation(m_PelvisBodyId);
-			homeLeft  = pelvisPos + pelvisRot * m_HomeLeftLocalOffset;
-			homeRight = pelvisPos + pelvisRot * m_HomeRightLocalOffset;
+			Vector3 pelvisWorld = GetPelvisWorldPosition();
+			Quaternion pelvisWorldRot = GetPelvisWorldOrientation();
+			homeLeft  = pelvisWorld + pelvisWorldRot * m_HomeLeftLocalOffset;
+			homeRight = pelvisWorld + pelvisWorldRot * m_HomeRightLocalOffset;
 		}
 
 		private static float Clamp01(float v) => v < 0f ? 0f : (v > 1f ? 1f : v);
