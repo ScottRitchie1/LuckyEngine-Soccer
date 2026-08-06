@@ -16,17 +16,21 @@ namespace Soccer
 	{
 		// ── Target ────────────────────────────────────────────────────────
 		[Group("Target")]
-		[Tooltip("Entity to walk toward. The robot faces it, walks to StandDistance, then pushes. Leave null to stand idle.")]
+		[Tooltip("The ball (or other pushable object). Leave null to stand idle.")]
 		public Entity? WalkTarget;
+
+		[Group("Target")]
+		[Tooltip("Where to push the ball toward. If set, the robot walks to the point on the OPPOSITE side of the ball from this entity (StandDistance back), then turns to face this entity before pushing - so the push always drives the ball toward it. If left null, falls back to the original behaviour: walk straight up to the ball and push in whatever direction you approached from.")]
+		public Entity? Goal;
 
 		// ── Locomotion ────────────────────────────────────────────────────
 		[Group("Locomotion")] [Units("m/s")] [Slider(0.0f, 1.5f)]
 		[Tooltip("Forward speed while travelling. The walker policy was trained around 0.5 m/s.")]
-		public float WalkSpeed = 0.993f;
+		public float WalkSpeed = 1.2f;
 
 		[Group("Locomotion")] [Units("m")] [Slider(0.0f, 2.0f)]
 		[Tooltip("Stop this far (XZ) from the target, then push.")]
-		public float StandDistance = 0.85f;
+		public float StandDistance = 1f;
 
 		[Group("Locomotion")] [Units("m")] [Slider(0.0f, 0.5f)]
 		[Tooltip("Distance dead-zone around StandDistance - prevents creeping/oscillation at arrival.")]
@@ -39,6 +43,10 @@ namespace Soccer
 		[Group("Locomotion")] [Units("rad/s")] [Slider(0.0f, 3.0f)]
 		[Tooltip("Cap on commanded yaw rate. The walker destabilises if asked to turn faster than it was trained for.")]
 		public float MaxYawRate = 1.0f;
+
+		[Group("Locomotion")]
+		[Tooltip("With a Goal set, walking straight at the approach point (opposite side of the ball from the Goal) can cut straight across the ball if the robot starts out on the Goal's side of it. When enabled, the robot instead sweeps around the ball at StandDistance - from its current bearing around to the approach bearing - producing a curving, ball-clearing path. Disable to walk straight at the approach point.")]
+		public bool CurveAroundBall = true;
 
 		// ── Facing (turn-to-face before walking) ──────────────────────────
 		[Group("Facing")]
@@ -73,11 +81,11 @@ namespace Soccer
 
 		[Group("Push")] [Units("m")] [Slider(0.0f, 0.7f)]
 		[Tooltip("How far forward the hands extend at full push.")]
-		public float PushReach = 0.6f;
+		public float PushReach = 0.5f;
 
 		[Group("Push")] [Units("m")] [Slider(-0.2f, 0.3f)]
 		[Tooltip("Vertical offset of the hands at full push, relative to resting position.")]
-		public float PushHeight = 0.15f;
+		public float PushHeight = 0.10f;
 
 		// ── Push timing ───────────────────────────────────────────────────
 		[Group("Push Timing")] [Units("s")] [Slider(0.0f, 2.0f)]
@@ -139,10 +147,15 @@ namespace Soccer
 		private const uint k_SetVy      = 2u;
 		private const uint k_SetYawRate = 3u;
 
-		// FaceSettle/FaceTurn/Walk = locomotion (from G1WalkForward).
+		// FaceSettle/FaceTurn/Walk = locomotion (from G1WalkForward), aimed at
+		// the MOVE TARGET (the ball itself, or - with a Goal set - the
+		// standoff point on the far side of the ball from the Goal).
+		// FaceGoalSettle/FaceGoalTurn = a second turn-in-place once standing
+		// at the move target, aiming at the Goal (or the ball, with no Goal
+		// set) so the push direction is correct.
 		// PushSettle/Windup/Push/Retract/Cooldown/Done = the push action (from G1Push),
-		// entered once the walk arrives.
-		private enum Phase { FaceSettle, FaceTurn, Walk, PushSettle, Windup, Push, Retract, Cooldown, Done }
+		// entered once that final facing step completes.
+		private enum Phase { FaceSettle, FaceTurn, Walk, FaceGoalSettle, FaceGoalTurn, PushSettle, Windup, Push, Retract, Cooldown, Done }
 
 		[HideFromEditor] private RobotControllerComponent? m_Robot;
 		[HideFromEditor] private MujocoSceneComponent?     m_Mujoco;
@@ -162,6 +175,12 @@ namespace Soccer
 		[HideFromEditor] private bool    m_RotatorActive;
 		[HideFromEditor] private string[] m_FullBodyMask  = Array.Empty<string>();
 		[HideFromEditor] private string[] m_ArmsFreedMask = Array.Empty<string>();
+		// Current sweep angle (radians, ball-relative bearing) of the walk
+		// waypoint while curving around the ball toward the approach point -
+		// see CurveAroundBall / the orbit logic in Phase.Walk. Only meaningful
+		// while m_OrbitAngleValid; re-initialised fresh each time Walk begins.
+		[HideFromEditor] private float   m_OrbitAngle;
+		[HideFromEditor] private bool    m_OrbitAngleValid;
 
 		protected override void OnCreate()
 		{
@@ -187,6 +206,7 @@ namespace Soccer
 			m_Robot?.SetPolicyActive(WalkerSlotId, true);
 			m_Phase = TurnToFaceFirst ? Phase.FaceSettle : Phase.Walk;
 			m_PhaseElapsed = 0f;
+			m_OrbitAngleValid = false;
 		}
 
 		protected override void OnUpdate(float ts)
@@ -214,7 +234,10 @@ namespace Soccer
 
 				case Phase.FaceTurn:
 				{
-					float err = HeadingErrorToTarget();
+					// Face the ball itself here, not the (possibly far-side) approach
+					// point - that's what the robot will initially walk toward as it
+					// closes distance, before any curving in Phase.Walk kicks in.
+					float err = HeadingErrorTo(WalkTarget!.Transform.WorldTranslation);
 					if (Mathf.Abs(err) <= FaceYawTolerance || m_PhaseElapsed >= FaceTimeout)
 					{
 						DisengageRotator();
@@ -232,21 +255,87 @@ namespace Soccer
 				case Phase.Walk:
 				{
 					Vector3 pelvis = GetPelvisWorldPosition();
-					Vector3 target = WalkTarget.Transform.WorldTranslation;
-					float dx = target.X - pelvis.X;
-					float dz = target.Z - pelvis.Z;
+					Vector3 ball   = WalkTarget!.Transform.WorldTranslation;
+					Vector3 arriveTarget = GetMoveTargetPosition();
+
+					Vector3 steerTarget;
+					float   arriveDistance;
+
+					if (Goal != null && CurveAroundBall)
+					{
+						// Walking straight at arriveTarget would cut across the ball
+						// whenever the robot starts out on the Goal's side of it.
+						// Instead steer toward a waypoint that sweeps around the ball
+						// at StandDistance, from the robot's current bearing around to
+						// the approach bearing, at a rate the walker can keep up with
+						// (WalkSpeed / StandDistance - the angular speed of actually
+						// walking that circle). The waypoint converges onto
+						// arriveTarget once the sweep catches up, so arrival is judged
+						// against the true fixed approach point, not the moving waypoint.
+						if (!m_OrbitAngleValid)
+						{
+							Vector3 rel = pelvis - ball; rel.Y = 0f;
+							m_OrbitAngle = rel.Length() > 1e-4f ? DirXZToAngle(rel) : GetPelvisYaw();
+							m_OrbitAngleValid = true;
+						}
+
+						float targetAngle = DirXZToAngle(GetStandoffDirection());
+						float angleDiff = Mathf.WrapToPi(targetAngle - m_OrbitAngle);
+						float maxRate = StandDistance > 1e-3f ? WalkSpeed / StandDistance : MaxYawRate;
+						float maxStep = maxRate * ts;
+						m_OrbitAngle += Mathf.Clamp(angleDiff, -maxStep, maxStep);
+
+						steerTarget = ball + AngleToDirXZ(m_OrbitAngle) * StandDistance;
+						arriveDistance = 0f;
+					}
+					else
+					{
+						m_OrbitAngleValid = false;
+						steerTarget = arriveTarget; // ball itself when Goal == null
+						arriveDistance = Goal != null ? 0f : StandDistance;
+					}
+
+					float dx = arriveTarget.X - pelvis.X;
+					float dz = arriveTarget.Z - pelvis.Z;
 					float distance = new Vector3(dx, 0f, dz).Length();
 
-					float yawRate = Mathf.Clamp(HeadingErrorToTarget() * YawGain, -MaxYawRate, MaxYawRate);
-					if (distance > StandDistance + ArriveTolerance)
+					float yawRate = Mathf.Clamp(HeadingErrorTo(steerTarget) * YawGain, -MaxYawRate, MaxYawRate);
+					if (distance > arriveDistance + ArriveTolerance)
 					{
 						Drive(WalkerSlotId, WalkSpeed, yawRate);
 					}
 					else
 					{
 						Drive(WalkerSlotId, 0f, 0f);
-						Advance(Phase.PushSettle);
+						m_OrbitAngleValid = false;
+						Advance(Phase.FaceGoalSettle);
 					}
+					break;
+				}
+
+				case Phase.FaceGoalSettle:
+					Drive(WalkerSlotId, 0f, 0f);
+					if (m_PhaseElapsed >= PreTurnSettle)
+					{
+						EngageRotator();
+						Advance(Phase.FaceGoalTurn);
+					}
+					break;
+
+				case Phase.FaceGoalTurn:
+				{
+					float err = HeadingErrorTo(GetGoalFaceTarget());
+					if (Mathf.Abs(err) <= FaceYawTolerance || m_PhaseElapsed >= FaceTimeout)
+					{
+						DisengageRotator();
+						Advance(Phase.PushSettle);
+						break;
+					}
+					float ramp = TurnRampIn > 0f ? Clamp01(m_PhaseElapsed / TurnRampIn) : 1f;
+					float yawRate = Mathf.Clamp(err * YawGain, -MaxYawRate, MaxYawRate) * ramp;
+					uint slot = m_RotatorActive ? RotatorSlotId : WalkerSlotId;
+					float vx = m_RotatorActive ? 0f : WalkerFallbackTurnVx;
+					Drive(slot, vx, yawRate);
 					break;
 				}
 
@@ -365,15 +454,65 @@ namespace Soccer
 			m_PhaseElapsed = 0f;
 		}
 
-		private float HeadingErrorToTarget()
+		// Heading error (radians, wrapped to [-pi, pi]) to an arbitrary
+		// world-space point.
+		private float HeadingErrorTo(Vector3 targetWorldPos)
 		{
-			if (WalkTarget == null)
-				return 0f;
 			Vector3 pelvis = GetPelvisWorldPosition();
-			Vector3 target = WalkTarget.Transform.WorldTranslation;
-			float dx = target.X - pelvis.X;
-			float dz = target.Z - pelvis.Z;
+			float dx = targetWorldPos.X - pelvis.X;
+			float dz = targetWorldPos.Z - pelvis.Z;
 			return Mathf.WrapToPi(Mathf.Atan2(-dz, dx) - GetPelvisYaw());
+		}
+
+		// Convert an angle (radians, same atan2(-z,x) convention as
+		// GetPelvisYaw/HeadingErrorTo) to a unit XZ direction, and back.
+		// Used for the ball-orbit sweep in Phase.Walk.
+		private static Vector3 AngleToDirXZ(float angle) => new Vector3(Mathf.Cos(angle), 0f, -Mathf.Sin(angle));
+		private static float DirXZToAngle(Vector3 dir) => Mathf.Atan2(-dir.Z, dir.X);
+
+		// Direction (unit, XZ) from the ball to where the robot should stand:
+		// the opposite side of the ball from the Goal. Falls back to the
+		// robot's current facing if no Goal is set (GetMoveTargetPosition
+		// doesn't use this fallback branch, since it returns the ball
+		// directly with no Goal - this only matters if some other caller
+		// asks for a direction with no Goal configured).
+		private Vector3 GetStandoffDirection()
+		{
+			Vector3 ball = WalkTarget!.Transform.WorldTranslation;
+			if (Goal == null)
+				return GetPelvisForward();
+			Vector3 goal = Goal.Transform.WorldTranslation;
+			Vector3 diff = goal - ball;
+			diff.Y = 0f;
+			float len = diff.Length();
+			return len > 1e-5f ? -(diff / len) : GetPelvisForward();
+		}
+
+		// The point the robot walks to before pushing. With a Goal configured,
+		// this is the point on the OPPOSITE side of the ball from the Goal
+		// (StandDistance back along the ball->Goal line), so that pushing
+		// forward from here drives the ball toward the Goal. With no Goal set,
+		// this is just the ball itself - the original WalkThenPush behaviour
+		// of walking up to the ball and pushing in whatever direction you
+		// happened to approach from.
+		private Vector3 GetMoveTargetPosition()
+		{
+			Vector3 ball = WalkTarget!.Transform.WorldTranslation;
+			if (Goal == null)
+				return ball;
+			return ball + GetStandoffDirection() * StandDistance;
+		}
+
+		// Where to aim once standing at the move target, immediately before
+		// pushing. Facing the Goal from the move target also means facing
+		// straight through the ball (the move target, ball, and Goal are
+		// collinear by construction), so the push lands toward the Goal.
+		// Falls back to facing the ball if no Goal is configured.
+		private Vector3 GetGoalFaceTarget()
+		{
+			if (Goal != null)
+				return Goal.Transform.WorldTranslation;
+			return WalkTarget!.Transform.WorldTranslation;
 		}
 
 		// MuJoCo positions/orientations for this robot are expressed in the
@@ -393,14 +532,14 @@ namespace Soccer
 			if (m_Mujoco == null || m_PelvisBodyId == uint.MaxValue)
 				return Transform.WorldTranslation;
 			Vector3 local = m_Mujoco.GetPosition(m_PelvisBodyId);
-			return Transform.WorldTranslation + new Quaternion(Transform.WorldRotation) * local;
+			return Transform.WorldTranslation + Transform.WorldRotationQuat * local;
 		}
 
 		private Quaternion GetPelvisWorldOrientation()
 		{
 			if (m_Mujoco == null || m_PelvisBodyId == uint.MaxValue)
-				return new Quaternion(Transform.WorldRotation);
-			return new Quaternion(Transform.WorldRotation) * m_Mujoco.GetOrientation(m_PelvisBodyId);
+				return Transform.WorldRotationQuat;
+			return Transform.WorldRotationQuat * m_Mujoco.GetOrientation(m_PelvisBodyId);
 		}
 
 		// G1 pelvis heading: local +X is forward. yaw = atan2(-fwd.Z, fwd.X).
@@ -419,7 +558,7 @@ namespace Soccer
 		private Vector3 GetPelvisForward()
 		{
 			if (m_Mujoco == null || m_PelvisBodyId == uint.MaxValue)
-				return new Quaternion(Transform.WorldRotation) * new Vector3(1f, 0f, 0f);
+				return Transform.WorldRotationQuat * new Vector3(1f, 0f, 0f);
 			Vector3 fwd = GetPelvisWorldOrientation() * new Vector3(1f, 0f, 0f);
 			fwd.Y = 0f;
 			float len = fwd.Length();

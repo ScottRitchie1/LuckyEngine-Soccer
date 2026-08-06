@@ -160,11 +160,11 @@ SceneSettings:
     RegisteredTasks:
       []
   EditorCamera:
-    Position: [4.07569, 1.42618, 5.05073]
-    FocalPoint: [-0.394742, -1.08598, -1.92811]
-    Distance: 8.66025
-    Pitch: 0.295255
-    Yaw: -0.570011
+    Position: [-5.89349, 4.09841, 7.59997]
+    FocalPoint: [-5.61668, -4.02868, -2.51407]
+    Distance: 12.9777
+    Pitch: 0.676716
+    Yaw: 0.0273621
   RendererSettings:
     Shadows:
       CascadeNearPlaneOffset: 0
@@ -589,6 +589,33 @@ Entities:
       Visible: true
     MujocoGeomComponent:
       ID: 44
+  - Entity: 2041070789483196579
+    Domain: Client
+    TagComponent:
+      Tag: Wall
+    Parent: 13297301893240040455
+    Children:
+      []
+    TransformComponent:
+      Position: [0.580093, 1.83166, -0.27]
+      Rotation: [0, 0, 0]
+      Scale: [0.162202, 3.74027, 0.0783072]
+    StaticMeshComponent:
+      AssetID: 4241663774595030205
+      MaterialTable:
+        0: 12403896343523160572
+      Visible: true
+    BoxColliderComponent:
+      Offset: [0, 0, 0]
+      HalfSize: [0.5, 0.5, 0.5]
+      Friction: 0.5
+      Restitution: 0.15
+    MujocoBoxColliderComponent:
+      Density: 500
+      Friction: [1, 0.1, 0.01]
+      Contype: 1
+      Conaffinity: 1
+      Condim: -1
   - Entity: 2064335960956041883
     Domain: Client
     TagComponent:
@@ -723,6 +750,33 @@ Entities:
       Visible: true
     MujocoGeomComponent:
       ID: 46
+  - Entity: 2389696562503894852
+    Domain: Client
+    TagComponent:
+      Tag: Wall
+    Parent: 13297301893240040455
+    Children:
+      []
+    TransformComponent:
+      Position: [0.580093, 1.83166, 0.268148]
+      Rotation: [0, 0, 0]
+      Scale: [0.162202, 3.74027, 0.0783072]
+    StaticMeshComponent:
+      AssetID: 4241663774595030205
+      MaterialTable:
+        0: 12403896343523160572
+      Visible: true
+    BoxColliderComponent:
+      Offset: [0, 0, 0]
+      HalfSize: [0.5, 0.5, 0.5]
+      Friction: 0.5
+      Restitution: 0.15
+    MujocoBoxColliderComponent:
+      Density: 500
+      Friction: [1, 0.1, 0.01]
+      Contype: 1
+      Conaffinity: 1
+      Condim: -1
   - Entity: 2463075629600560003
     Domain: Client
     TagComponent:
@@ -2082,11 +2136,6 @@ Entities:
       MaterialTable:
         0: 2527365211622438541
       Visible: true
-    BoxColliderComponent:
-      Offset: [0, 0, 0]
-      HalfSize: [0.5, 0.5, 0.5]
-      Friction: 0.5
-      Restitution: 0.15
     MujocoBoxColliderComponent:
       Density: 500
       Friction: [1, 0.1, 0.01]
@@ -2282,6 +2331,33 @@ Entities:
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 6
+  - Entity: 9120488251787946301
+    Domain: Client
+    TagComponent:
+      Tag: Wall
+    Parent: 13297301893240040455
+    Children:
+      []
+    TransformComponent:
+      Position: [0.64, 1.83166, 0]
+      Rotation: [0, 0, 0]
+      Scale: [0.04, 3.74027, 0.6]
+    StaticMeshComponent:
+      AssetID: 4241663774595030205
+      MaterialTable:
+        0: 12403896343523160572
+      Visible: true
+    BoxColliderComponent:
+      Offset: [0, 0, 0]
+      HalfSize: [0.5, 0.5, 0.5]
+      Friction: 0.5
+      Restitution: 0.15
+    MujocoBoxColliderComponent:
+      Density: 500
+      Friction: [1, 0.1, 0.01]
+      Contype: 1
+      Conaffinity: 1
+      Condim: -1
   - Entity: 9153740723464039865
     Domain: Client
     TagComponent:
@@ -2620,6 +2696,33 @@ Entities:
       Visible: true
     MujocoGeomComponent:
       ID: 68
+  - Entity: 10832036360750568957
+    Domain: Client
+    TagComponent:
+      Tag: Wall
+    Parent: 13297301893240040455
+    Children:
+      []
+    TransformComponent:
+      Position: [-0.58, 1.83166, -0.27]
+      Rotation: [0, 0, 0]
+      Scale: [0.162202, 3.74027, 0.0783072]
+    StaticMeshComponent:
+      AssetID: 4241663774595030205
+      MaterialTable:
+        0: 12403896343523160572
+      Visible: true
+    BoxColliderComponent:
+      Offset: [0, 0, 0]
+      HalfSize: [0.5, 0.5, 0.5]
+      Friction: 0.5
+      Restitution: 0.15
+    MujocoBoxColliderComponent:
+      Density: 500
+      Friction: [1, 0.1, 0.01]
+      Contype: 1
+      Conaffinity: 1
+      Condim: -1
   - Entity: 10929641114421268750
     Domain: Client
     TagComponent:
@@ -2783,6 +2886,60 @@ Entities:
       Visible: true
     MujocoGeomComponent:
       ID: 22
+  - Entity: 12013423846089092670
+    Domain: Client
+    TagComponent:
+      Tag: Wall
+    Parent: 13297301893240040455
+    Children:
+      []
+    TransformComponent:
+      Position: [-0.640665, 1.83166, 0]
+      Rotation: [0, 0, 0]
+      Scale: [0.04, 3.74027, 0.6]
+    StaticMeshComponent:
+      AssetID: 4241663774595030205
+      MaterialTable:
+        0: 12403896343523160572
+      Visible: true
+    BoxColliderComponent:
+      Offset: [0, 0, 0]
+      HalfSize: [0.5, 0.5, 0.5]
+      Friction: 0.5
+      Restitution: 0.15
+    MujocoBoxColliderComponent:
+      Density: 500
+      Friction: [1, 0.1, 0.01]
+      Contype: 1
+      Conaffinity: 1
+      Condim: -1
+  - Entity: 12079254357687047590
+    Domain: Client
+    TagComponent:
+      Tag: Wall
+    Parent: 13297301893240040455
+    Children:
+      []
+    TransformComponent:
+      Position: [-0.58, 1.83166, 0.27]
+      Rotation: [0, 0, 0]
+      Scale: [0.162202, 3.74027, 0.0783072]
+    StaticMeshComponent:
+      AssetID: 4241663774595030205
+      MaterialTable:
+        0: 12403896343523160572
+      Visible: true
+    BoxColliderComponent:
+      Offset: [0, 0, 0]
+      HalfSize: [0.5, 0.5, 0.5]
+      Friction: 0.5
+      Restitution: 0.15
+    MujocoBoxColliderComponent:
+      Density: 500
+      Friction: [1, 0.1, 0.01]
+      Contype: 1
+      Conaffinity: 1
+      Condim: -1
   - Entity: 12088651385559949595
     Domain: Client
     TagComponent:
@@ -2954,8 +3111,8 @@ Entities:
     Children:
       []
     TransformComponent:
-      Position: [2, 2, -2]
-      Rotation: [2.61799, 0.610865, 3.14159]
+      Position: [0, 11.0636, 6.02501]
+      Rotation: [-1.10954, 0, 0]
       Scale: [1, 1, 1]
     CameraComponent:
       Camera:
@@ -3038,6 +3195,12 @@ Entities:
       - Handle: 13389507655344841393
       - Handle: 8104256272251118014
       - Handle: 17950319899844429920
+      - Handle: 12013423846089092670
+      - Handle: 9120488251787946301
+      - Handle: 2389696562503894852
+      - Handle: 2041070789483196579
+      - Handle: 10832036360750568957
+      - Handle: 12079254357687047590
     TransformComponent:
       Position: [0, -0.1, 0]
       Rotation: [0, 0, 0]
@@ -3175,14 +3338,18 @@ Entities:
           Name: WalkTarget
           Type: Entity
           Value: 2276781885538871374
+        - ID: 2205623697
+          Name: Goal
+          Type: Entity
+          Value: 17950319899844429920
         - ID: 3244213740
           Name: WalkSpeed
           Type: Float
-          Value: 0.993
+          Value: 1.2
         - ID: 2926452953
           Name: StandDistance
           Type: Float
-          Value: 0.85
+          Value: 1
         - ID: 3600623034
           Name: ArriveTolerance
           Type: Float
@@ -3195,6 +3362,10 @@ Entities:
           Name: MaxYawRate
           Type: Float
           Value: 1
+        - ID: 3604940061
+          Name: CurveAroundBall
+          Type: Bool
+          Value: true
         - ID: 868368445
           Name: TurnToFaceFirst
           Type: Bool
@@ -4322,14 +4493,18 @@ Entities:
           Name: WalkTarget
           Type: Entity
           Value: 2276781885538871374
+        - ID: 2205623697
+          Name: Goal
+          Type: Entity
+          Value: 8104256272251118014
         - ID: 3244213740
           Name: WalkSpeed
           Type: Float
-          Value: 0.993
+          Value: 1.2
         - ID: 2926452953
           Name: StandDistance
           Type: Float
-          Value: 0.85
+          Value: 1
         - ID: 3600623034
           Name: ArriveTolerance
           Type: Float
@@ -4342,6 +4517,10 @@ Entities:
           Name: MaxYawRate
           Type: Float
           Value: 1
+        - ID: 3604940061
+          Name: CurveAroundBall
+          Type: Bool
+          Value: true
         - ID: 868368445
           Name: TurnToFaceFirst
           Type: Bool
@@ -4551,11 +4730,6 @@ Entities:
       MaterialTable:
         0: 9486334613531098193
       Visible: true
-    BoxColliderComponent:
-      Offset: [0, 0, 0]
-      HalfSize: [0.5, 0.5, 0.5]
-      Friction: 0.5
-      Restitution: 0.15
     MujocoBoxColliderComponent:
       Density: 500
       Friction: [1, 0.1, 0.01]
