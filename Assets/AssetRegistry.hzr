@@ -5,6 +5,9 @@ Assets:
   - Handle: 322911282174702297
     FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_2_SM_Template_Map_Floor_Mujoco_Geom_AKSM8X6687M05SUMYZ4VVO5OY_SM_Template_Map_Floor_Mujoco_54891.obj
     Type: MeshSource
+  - Handle: 344211106599343682
+    FilePath: Meshes/Ball.hsmesh
+    Type: StaticMesh
   - Handle: 609194238740981540
     FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_0_SM_Template_Map_Floor_Geom_5G8106JNGWGV4KE7ASN9Q5ELP_SM_Template_Map_Floor_55952.obj
     Type: MeshSource
@@ -125,6 +128,9 @@ Assets:
   - Handle: 4949858365324918783
     FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/right_hip_yaw_link.STL
     Type: MeshSource
+  - Handle: 5352711709123097445
+    FilePath: Meshes/football goal.obj
+    Type: MeshSource
   - Handle: 5712451343787241409
     FilePath: Materials/Default/GroundMaterial.hmaterial
     Type: Material
@@ -134,6 +140,9 @@ Assets:
   - Handle: 6022401658311820817
     FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_1_floor_Mujoco_Geom_9PF504YOILC6HJDCX9E6MVLVU_floor_Mujoco_54916.obj
     Type: MeshSource
+  - Handle: 6260636823771340456
+    FilePath: Meshes/football goal.hsmesh
+    Type: StaticMesh
   - Handle: 6265284091203767963
     FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/MujocoStaticMeshActor_0_SM_Template_Map_Floor_Geom_5G8106JNGWGV4KE7ASN9Q5ELP_SM_Template_Map_Floor_55818.obj
     Type: MeshSource
@@ -395,6 +404,9 @@ Assets:
   - Handle: 17462475252288129742
     FilePath: Scripts/Source/Generated/MainPolicyIds.cs
     Type: ScriptFile
+  - Handle: 17535828498444880972
+    FilePath: Meshes/Ball.fbx
+    Type: MeshSource
   - Handle: 18130808224356694619
     FilePath: Meshes/Default/Source/Capsule.gltf
     Type: MeshSource

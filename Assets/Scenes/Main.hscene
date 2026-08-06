@@ -160,11 +160,11 @@ SceneSettings:
     RegisteredTasks:
       []
   EditorCamera:
-    Position: [-1.93423, 10.2596, 5.87935]
-    FocalPoint: [-1.91449, 3.11695, 0.982265]
+    Position: [-1.67217, 5.63447, 7.64618]
+    FocalPoint: [-1.03373, 0.759743, 0.516702]
     Distance: 8.66025
-    Pitch: 0.969792
-    Yaw: 0.00403234
+    Pitch: 0.597872
+    Yaw: 0.0893105
   RendererSettings:
     Shadows:
       CascadeNearPlaneOffset: 0
@@ -654,7 +654,7 @@ Entities:
       Tag: Ball
     Parent: 0
     Children:
-      []
+      - Handle: 11417031090725712343
     TransformComponent:
       Position: [0, 0.617648, 0]
       Rotation: [0, 0, 0]
@@ -683,11 +683,6 @@ Entities:
           Name: scoreText
           Type: Entity
           Value: 2596151479179322867
-    StaticMeshComponent:
-      AssetID: 14956574617453564460
-      MaterialTable:
-        0: 0
-      Visible: true
     RigidBodyComponent:
       BodyType: 1
       LayerID: 0
@@ -2077,7 +2072,7 @@ Entities:
       Tag: Blue Goal
     Parent: 13297301893240040455
     Children:
-      []
+      - Handle: 18435739704442660188
     TransformComponent:
       Position: [0.547398, 0.0183403, 0]
       Rotation: [0, 0, 0]
@@ -2671,6 +2666,23 @@ Entities:
       Scale: [1, 1, 1]
     MujocoBodyComponent:
       ID: 34
+  - Entity: 11417031090725712343
+    Domain: Client
+    TagComponent:
+      Tag: Mesh
+    Parent: 2276781885538871374
+    Children:
+      []
+    TransformComponent:
+      Position: [0, 0, 0]
+      Rotation: [0, 0, 0]
+      Scale: [1, 1, 1]
+    StaticMeshComponent:
+      AssetID: 344211106599343682
+      MaterialTable:
+        0: 0
+        1: 0
+      Visible: true
   - Entity: 11430141878201393214
     Domain: Client
     TagComponent:
@@ -3152,7 +3164,7 @@ Entities:
       - Handle: 11453641102661510586
       - Handle: 12088651385559949595
     TransformComponent:
-      Position: [5, 0, 0]
+      Position: [2.98876, -9.53674e-07, 3.95646]
       Rotation: [0, 0, 0]
       Scale: [1, 1, 1]
     ScriptComponent:
@@ -4466,13 +4478,30 @@ Entities:
       Visible: true
     MujocoGeomComponent:
       ID: 1
+  - Entity: 17845322165351464765
+    Domain: Client
+    TagComponent:
+      Tag: football goal
+    Parent: 17950319899844429920
+    Children:
+      []
+    TransformComponent:
+      Position: [-0.0230102, 0.481658, -0.532038]
+      Rotation: [0, -1.5708, 0]
+      Scale: [0.00460193, 0.05, 0.00212815]
+    StaticMeshComponent:
+      AssetID: 6260636823771340456
+      MaterialTable:
+        0: 0
+        1: 0
+      Visible: true
   - Entity: 17950319899844429920
     Domain: Client
     TagComponent:
       Tag: Red Goal
     Parent: 13297301893240040455
     Children:
-      []
+      - Handle: 17845322165351464765
     TransformComponent:
       Position: [-0.55, 0.0183403, 0]
       Rotation: [0, 0, 0]
@@ -4517,6 +4546,23 @@ Entities:
       Position: [-0.0435534, 0.99192, 0.00223935]
       Rotation: [-1.5708, 0, 0]
       Scale: [1, 1, 1]
+  - Entity: 18435739704442660188
+    Domain: Client
+    TagComponent:
+      Tag: football goal
+    Parent: 8104256272251118014
+    Children:
+      []
+    TransformComponent:
+      Position: [0.0424717, 0.481658, 0.53244]
+      Rotation: [0, 1.5708, 0]
+      Scale: [0.00460193, 0.05, 0.00212815]
+    StaticMeshComponent:
+      AssetID: 6260636823771340456
+      MaterialTable:
+        0: 0
+        1: 0
+      Visible: true
 SceneAudio:
   MasterReverb:
     Pre-delay: 0

@@ -52,7 +52,7 @@ namespace Soccer
 		        TextComponent textC = scoreText.GetComponent<TextComponent>();
 		        
 		        if(textC != null){
-		           textC.Text = $"Blue:{BlueScore}\nRed:{RedScore}}}";
+		           textC.Text = $"Blue:{BlueScore}\nRed:{RedScore}";
 		        }
 		    }
 		}
