@@ -83,9 +83,6 @@ Assets:
   - Handle: 3517740315478852090
     FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/right_hand_index_0_link.STL
     Type: MeshSource
-  - Handle: 3631657783894698893
-    FilePath: Scripts/Client/Source/G1Push.cs
-    Type: ScriptFile
   - Handle: 3733617714893260144
     FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/Policies/rotator.honnx
     Type: OnnxPolicy
@@ -248,9 +245,6 @@ Assets:
   - Handle: 10759091747979573297
     FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/Policies/policy_descriptor.rotator.json
     Type: Motion
-  - Handle: 10788707727481907501
-    FilePath: Scripts/Client/Source/G1WalkForward.cs
-    Type: ScriptFile
   - Handle: 10915495051698433608
     FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/right_hip_pitch_link.STL
     Type: MeshSource
@@ -328,9 +322,6 @@ Assets:
     Type: MeshSource
   - Handle: 14743383982549149309
     FilePath: Scripts/Client/Source/G1WalkThenPush.cs
-    Type: ScriptFile
-  - Handle: 14792177238328196799
-    FilePath: Scripts/Client/Source/G1Kick.cs
     Type: ScriptFile
   - Handle: 14823698433773830604
     FilePath: ContentVault/Robots/UnitreeG1ThreeFingers/assets/right_wrist_yaw_link.STL

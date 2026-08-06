@@ -161,10 +161,10 @@ SceneSettings:
       []
   EditorCamera:
     Position: [1.51323, 2.85501, 5.901]
-    FocalPoint: [1.5635, -0.708211, -6.57782]
+    FocalPoint: [2.77955, -1.74265, -6.16872]
     Distance: 12.9777
-    Pitch: 0.278138
-    Yaw: 0.00403428
+    Pitch: 0.362138
+    Yaw: 0.104534
   RendererSettings:
     Shadows:
       CascadeNearPlaneOffset: 0

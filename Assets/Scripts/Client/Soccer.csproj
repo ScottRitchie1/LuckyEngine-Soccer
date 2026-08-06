@@ -83,9 +83,6 @@
       <Link>ContentVault\Robots\UnitreeG1ThreeFingers\Policies\walker_Policy.cs</Link>
     </Compile>
     <Compile Include="Source\Ball.cs" />
-    <Compile Include="Source\G1Kick.cs" />
-    <Compile Include="Source\G1Push.cs" />
-    <Compile Include="Source\G1WalkForward.cs" />
     <Compile Include="Source\G1WalkThenPush.cs" />
   </ItemGroup>
 </Project>
